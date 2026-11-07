@@ -1,0 +1,1793 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="theme-color" content="#181627"/>
+<title>PetroPrep — Engenharia de Petróleo</title>
+<meta name="description" content="Portal de estudos para Petrobras Engenharia de Petróleo com trilhas, resumos, questões no estilo Cebraspe e acompanhamento de desempenho."/>
+<style>
+:root{--bg:#f7f8fb;--surface:#ffffff;--surface2:#f1f2f8;--text:#181727;--muted:#78788c;--border:#e9e8f1;--purple:#6c4ee6;--purpledeep:#4f34b4;--purplelight:#f0ecff;--blue:#467ce5;--green:#278e72;--greenlight:#e9f7f1;--red:#c44b64;--redlight:#fff0f1;--amber:#ac741b;--amberlight:#fff5df;--shadow:0 15px 42px rgba(39,35,77,.055);--sidebar:#181627;--sidebartext:#a6a4b7;--radius:17px;font-family:'DM Sans',system-ui,-apple-system,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit}a:hover{text-decoration:none}svg{flex-shrink:0}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #967cff;outline-offset:2px}
+.app{display:flex;min-height:100vh}.sidebar{width:248px;background:var(--sidebar);color:#fff;position:fixed;inset:0 auto 0 0;z-index:30;display:flex;flex-direction:column;padding:26px 16px 20px;overflow:auto;transition:transform .25s}.brand{display:flex;align-items:center;gap:12px;padding:3px 10px 29px}.brandmark{width:41px;height:41px;border-radius:13px;background:linear-gradient(145deg,#a18bff,#6645e8);display:grid;place-items:center;color:white;font-weight:900;font-size:24px;box-shadow:0 7px 20px #7354ff46}.brandtitle{font-family:Manrope,sans-serif;font-weight:800;letter-spacing:-.7px;font-size:20px}.brandcaption{color:#aaa7bb;font-size:10px;letter-spacing:1.7px;font-weight:700;text-transform:uppercase}.navsection{color:#777487;font-size:10px;font-weight:800;letter-spacing:1.7px;padding:19px 17px 9px;text-transform:uppercase}.navitem{display:flex;gap:13px;align-items:center;padding:12px 14px;border-radius:11px;border:0;background:none;color:var(--sidebartext);width:100%;text-align:left;font-weight:600;font-size:13px;transition:.16s;margin:2px 0}.navitem .navicon{font-size:18px;width:22px;text-align:center;line-height:1}.navitem:hover{background:#29263b;color:#fff}.navitem.active{background:#514087;color:#fff;box-shadow:inset 3px 0 #b8a3ff}.sidebottom{margin-top:auto}.sidepromo{margin:14px 6px;background:linear-gradient(140deg,#352d57,#27223f);border:1px solid #493f6a;border-radius:16px;padding:17px}.sidepromo strong{font-size:13px;display:block;line-height:1.5}.sidepromo p{color:#b9b3ce;font-size:12px;line-height:1.6}.sidepromo button{background:#a28bfb;border:0;color:#190d39;border-radius:9px;padding:9px 12px;font-weight:800;font-size:11px;width:100%}.sidefoot{color:#716d83;font-size:11px;padding:13px 10px 0}.content{margin-left:248px;min-width:0;flex:1;max-width:calc(100vw - 248px)}.topbar{height:84px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 44px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.88);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}.toplabel{font-weight:700;font-size:13px;color:var(--muted)}.topright{display:flex;align-items:center;gap:12px}.pill{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;padding:9px 11px;border-radius:999px;color:#625187;background:#f0edfa;white-space:nowrap}.avatar{width:37px;height:37px;border-radius:50%;background:linear-gradient(130deg,#d6cef9,#c3b1f9);color:#573e9d;display:grid;place-items:center;font-weight:900;font-size:13px}.iconbtn{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 12px;color:var(--text)}.burger{display:none}.main{max-width:1350px;margin:auto;padding:34px 44px 75px}.eyebrow{color:var(--purple);font-size:11px;text-transform:uppercase;font-weight:800;letter-spacing:2px}.pageheading{font-family:Manrope,sans-serif;font-size:30px;letter-spacing:-1.3px;margin:5px 0 7px;font-weight:800}.subtitle{color:var(--muted);font-size:13px;line-height:1.7;margin:0}.pagehead{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}.hero{background:radial-gradient(circle at 88% 12%,#6354a8 0%,transparent 34%),linear-gradient(124deg,#2b234c,#211c36 73%);color:#fff;border-radius:20px;min-height:252px;padding:35px 37px;position:relative;overflow:hidden;display:flex;align-items:center;box-shadow:0 24px 44px #27204214}.hero:before{content:'';position:absolute;right:-95px;bottom:-150px;width:430px;height:430px;border-radius:50%;border:1px solid #a995ff35;box-shadow:0 0 0 45px #ffffff07,0 0 0 97px #ffffff06,0 0 0 148px #ffffff04}.hero:after{content:'';position:absolute;right:135px;top:65px;width:115px;height:115px;border:1px solid #fff2;transform:rotate(32deg);border-radius:24px}.heroinside{position:relative;z-index:2;max-width:640px}.herotag{display:inline-flex;align-items:center;gap:7px;background:#ffffff1c;border:1px solid #ffffff2e;border-radius:999px;padding:7px 12px;font-size:11px;font-weight:700;color:#e1daff}.hero h1{font-family:Manrope,sans-serif;font-size:clamp(26px,3vw,38px);line-height:1.2;letter-spacing:-1.6px;margin:17px 0 10px;max-width:560px}.hero p{color:#c5bfdf;font-size:13px;line-height:1.8;max-width:490px;margin:0 0 20px}.herobuttons{display:flex;gap:10px;flex-wrap:wrap}.btn{background:var(--purple);border:1px solid var(--purple);border-radius:10px;padding:11px 16px;color:#fff;font-weight:800;font-size:12px;display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;transition:.15s;white-space:nowrap}.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}.btn.secondary{background:var(--surface);color:var(--text);border-color:var(--border)}.btn.outline{background:transparent;color:var(--purple);border-color:#c8bdff}.btn.ghostwhite{background:#ffffff1c;border-color:#ffffff3d;color:#fff}.btn.small{padding:8px 12px;font-size:11px}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.space{height:26px}.secrow{display:flex;align-items:baseline;justify-content:space-between;margin:28px 0 16px;gap:12px}.sectitle{font-family:Manrope,sans-serif;font-size:18px;letter-spacing:-.6px;margin:0;font-weight:800}.smallmuted{font-size:12px;color:var(--muted)}.textlink{border:0;background:none;color:var(--purple);font-size:12px;font-weight:800;padding:5px;cursor:pointer}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin:20px 0 0}.stat{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:19px 18px;box-shadow:var(--shadow);min-width:0}.stat-head{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:11px;font-weight:700}.stat-icon{height:33px;width:33px;display:grid;place-items:center;background:var(--purplelight);border-radius:10px;color:var(--purple);font-size:17px}.statvalue{font-family:Manrope,sans-serif;font-size:28px;letter-spacing:-1px;font-weight:800;margin-top:10px;white-space:nowrap}.statfoot{font-size:11px;color:var(--muted);margin-top:5px}.columns{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(270px,1fr);gap:19px}.panel{background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:22px}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}.panel h3{font-family:Manrope,sans-serif;font-weight:800;letter-spacing:-.4px;font-size:15px;margin:0}.courseitem{display:flex;gap:13px;align-items:center;padding:14px 0;border-top:1px solid var(--border);cursor:pointer}.courseitem:first-of-type{border-top:0}.courseicon{width:42px;height:42px;background:var(--purplelight);color:var(--purple);border-radius:12px;display:grid;place-items:center;font-size:17px;font-weight:800;flex-shrink:0}.courseitem .ctitle{font-size:13px;font-weight:800}.courseitem .cmeta{font-size:11px;color:var(--muted);margin-top:4px}.courseitem .arrow{margin-left:auto;color:#aaa7b7}.progressbar{height:7px;background:#ebe9f2;border-radius:99px;overflow:hidden}.progressfill{height:100%;background:linear-gradient(90deg,#816af0,#b09bfa);border-radius:99px}.donut{width:132px;height:132px;border-radius:50%;display:grid;place-items:center;margin:12px auto;background:conic-gradient(var(--purple) var(--percent),#ebe9f3 0)}.donutinner{background:var(--surface);width:102px;height:102px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}.donutinner strong{font-size:28px;letter-spacing:-1px;font-family:Manrope,sans-serif}.donutinner small{font-size:10px;color:var(--muted)}.legend{display:flex;justify-content:space-between;gap:5px;font-size:11px;color:var(--muted);margin:12px 0}.legend strong{color:var(--text)}.weekline{padding:13px;background:var(--surface2);border-radius:11px;margin:14px 0}.weekline .lab{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:var(--purple);font-weight:800}.weekline strong{display:block;font-size:13px;margin:6px 0}.weekline p{font-size:11px;color:var(--muted);margin:0}.actioncards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.actioncard{padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--surface);text-align:left;transition:.2s}.actioncard:hover,.topiccard:hover{border-color:#bcaefe;transform:translateY(-2px);box-shadow:0 12px 28px #6142c214}.actioncard .bigemoji{display:block;font-size:24px;margin-bottom:16px}.actioncard strong{display:block;font-size:13px}.actioncard p{font-size:11px;color:var(--muted);line-height:1.6;margin:6px 0 0}.filters{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 20px}.searchbox{background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;border-radius:10px;padding:0 13px;flex:1;min-width:200px;gap:10px;color:var(--muted)}.searchbox input{height:42px;width:100%;outline:none;border:0;background:none;color:var(--text);font-size:12px}.select{height:43px;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:12px;padding:0 12px;min-width:135px}.tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:19px}.tab{border:1px solid var(--border);background:var(--surface);color:var(--muted);padding:9px 13px;font-size:11px;font-weight:800;border-radius:9px}.tab.active{background:var(--purplelight);color:var(--purple);border-color:#d6ccff}.topics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.topiccard{background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:20px;text-align:left;transition:.15s;display:flex;flex-direction:column;gap:12px;min-height:188px}.topicbadge{display:inline-block;border-radius:6px;background:var(--purplelight);color:var(--purple);padding:5px 8px;font-size:9px;font-weight:800;align-self:flex-start;letter-spacing:.2px}.topicbadge.green{background:var(--greenlight);color:var(--green)}.topicbadge.amber{background:var(--amberlight);color:var(--amber)}.topiccard h3{font-size:14px;line-height:1.45;margin:0;font-weight:800}.topiccard p{font-size:11px;color:var(--muted);line-height:1.65;margin:0;flex:1}.topicfooter{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:13px}.topicfooter b{color:var(--purple)}.lessonlayout{display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:20px}.lessonbody{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:32px}.lessonbody h2{font-family:Manrope,sans-serif;font-size:20px;margin:26px 0 10px;letter-spacing:-.5px}.lessonbody h2:first-of-type{margin-top:6px}.lessonbody p{font-size:14px;color:#5d5c70;line-height:1.9}.formula{margin:17px 0;padding:19px 22px;border-left:4px solid #7960e8;border-radius:0 10px 10px 0;background:var(--purplelight);font-size:15px;font-weight:800;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere;color:#514091}.example{background:#f3f8f5;border:1px solid #d7ebdf;border-radius:12px;padding:19px;line-height:1.75;font-size:13px;color:#356c59}.lessonextra{margin:12px 0 20px;padding-left:22px;color:#5d5c70;font-size:13px;line-height:1.85}.lessonextra li{margin:8px 0}.lessonaside .panel{position:sticky;top:105px}.resourcelink{display:flex;align-items:center;gap:10px;padding:10px 0;text-decoration:none;border-bottom:1px solid var(--border);font-weight:700;font-size:12px;color:var(--purple)}.resourcelink:last-child{border:none}.studyrow{display:grid;grid-template-columns:1fr 1fr;gap:12px}.numberselect{display:flex;gap:8px;flex-wrap:wrap}.numchip{background:var(--surface2);border:1px solid var(--border);padding:13px 16px;border-radius:10px;font-weight:800;font-size:13px}.numchip.selected{border-color:var(--purple);background:var(--purplelight);color:var(--purple)}.quizwrap{max-width:820px;margin:0 auto}.quiztop{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:18px}.quizprogress{height:7px;background:var(--border);border-radius:9px;overflow:hidden;margin:15px 0 25px}.quizprogress div{height:100%;background:var(--purple);transition:.2s}.qcard{padding:32px;background:var(--surface);border:1px solid var(--border);border-radius:19px;box-shadow:var(--shadow)}.qmeta{display:flex;justify-content:space-between;gap:9px;align-items:center;color:var(--muted);font-size:11px;font-weight:700}.qtext{font-size:19px;font-family:Manrope,sans-serif;font-weight:700;line-height:1.6;letter-spacing:-.3px;margin:29px 0}.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px}.choice{border:1.5px solid var(--border);background:var(--surface);border-radius:11px;padding:17px;text-align:center;font-size:14px;font-weight:800;color:var(--text)}.choice:hover:not(:disabled){border-color:#9a89ee;background:var(--purplelight)}.choice.correct{background:var(--greenlight);border-color:#59b697;color:#17684f}.choice.wrong{background:var(--redlight);border-color:#df8294;color:#ad3951}.choice:disabled{cursor:default}.qfooter{margin-top:20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.feedback{border-radius:12px;padding:20px;margin-top:18px;background:var(--greenlight);border:1px solid #c4e3d5}.feedback.bad{background:var(--redlight);border-color:#f2cbd2}.feedback strong{font-size:14px;display:block;margin-bottom:7px}.feedback p{color:var(--text);font-size:13px;line-height:1.75;margin:0}.results{max-width:650px;margin:30px auto;text-align:center}.resultnumber{font-size:55px;letter-spacing:-3px;font-family:Manrope,sans-serif;font-weight:800;color:var(--purple);margin:15px}.results .panel{text-align:left}.resultgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}.resulttile{padding:15px;background:var(--surface2);border-radius:12px;text-align:center}.resulttile strong{display:block;font-size:22px}.resulttile span{font-size:11px;color:var(--muted)}.tablewrap{overflow:auto}.table{width:100%;border-collapse:collapse;min-width:580px}.table td,.table th{text-align:left;border-bottom:1px solid var(--border);padding:14px 12px;font-size:12px}.table th{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1px}.table tr:last-child td{border:0}.weekitem{border:1px solid var(--border);border-radius:12px;padding:16px;margin:10px 0;display:flex;align-items:center;gap:15px;background:var(--surface)}.weeknum{height:38px;width:38px;border-radius:12px;background:var(--purplelight);color:var(--purple);display:grid;place-items:center;font-weight:900;flex-shrink:0}.weekitem h4{font-size:13px;margin:0 0 5px}.weekitem p{font-size:11px;color:var(--muted);margin:0}.resourcecards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.resourcecard{display:flex;text-decoration:none;align-items:flex-start;gap:14px;background:var(--surface);border:1px solid var(--border);padding:19px;border-radius:14px;transition:.2s}.resourcecard:hover{border-color:#b4a5fe}.resourcecard span{font-size:23px}.resourcecard strong{font-size:13px;display:block}.resourcecard p{font-size:11px;color:var(--muted);line-height:1.6;margin:6px 0}.field{display:flex;flex-direction:column;gap:7px;margin:0 0 15px}.field label{font-size:11px;font-weight:800;color:#68667b}.field input,.field select,.field textarea{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:10px;padding:12px;font-size:12px;outline:none;width:100%}.field textarea{min-height:95px;resize:vertical;line-height:1.6}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:14px}.notice{padding:14px 17px;border-radius:11px;background:var(--purplelight);font-size:12px;line-height:1.75;color:#51428d;margin:10px 0 19px}.notice.warn{background:var(--amberlight);color:#875d1e}.empty{text-align:center;padding:55px 25px;border:1px dashed #d4d0e1;border-radius:15px;color:var(--muted)}.empty strong{font-size:16px;color:var(--text);display:block;margin:10px}.empty p{font-size:12px;line-height:1.6}.toast{position:fixed;right:25px;bottom:25px;background:#251e40;color:white;padding:14px 18px;border-radius:11px;font-size:12px;z-index:90;box-shadow:0 20px 35px #15102a28;max-width:350px;animation:pop .2s}@keyframes pop{from{transform:translateY(8px);opacity:0}to{transform:translateY(0);opacity:1}}.mobileoverlay{display:none}.mb0{margin-bottom:0}.muted{color:var(--muted)}.small{font-size:12px}.footerline{border-top:1px solid var(--border);margin-top:42px;padding-top:20px;color:#9c99ac;font-size:11px;line-height:1.7}.divider{height:1px;background:var(--border);margin:18px 0}.chip{font-size:10px;padding:5px 8px;border-radius:7px;background:var(--surface2);color:var(--muted);font-weight:700}.chip.ok{background:var(--greenlight);color:var(--green)}.chip.bad{background:var(--redlight);color:var(--red)}.center{text-align:center}.clickable{cursor:pointer}.hidden{display:none!important}
+body.dark{--bg:#11101b;--surface:#1d1b2c;--surface2:#282638;--text:#f1eff9;--muted:#aaa8bf;--border:#36334a;--purple:#a48eff;--purpledeep:#8069e8;--purplelight:#332b50;--greenlight:#213b33;--redlight:#492b36;--amberlight:#443522;--shadow:0 12px 30px #0002}body.dark .topbar{background:#1d1b2df5}body.dark .lessonbody p,body.dark .lessonextra{color:#bab7ca}body.dark .formula{color:#c8baff}body.dark .example{background:#21352d;border-color:#3c6955;color:#c3e8d8}body.dark .pill{background:#362c50;color:#ccbcff}body.dark .quizwrap .feedback{color:var(--text)}body.dark .searchbox input{color:var(--text)}body.dark .courseicon{color:#b9aaff}body.dark .toast{background:#615093}
+@media(max-width:1200px){.main{padding:30px 26px 55px}.topbar{padding:0 26px}.topics{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{gap:10px}.stat{padding:15px}.columns{grid-template-columns:1.4fr 1fr}}
+@media(max-width:900px){.sidebar{transform:translateX(-102%);box-shadow:20px 0 50px #0003}.sidebar.open{transform:translateX(0)}.mobileoverlay.show{display:block;position:fixed;inset:0;background:#0006;z-index:25}.content{margin:0;max-width:100vw}.burger{display:block}.topbar{height:68px}.columns,.lessonlayout{grid-template-columns:1fr}.lessonaside .panel{position:static}.stats{grid-template-columns:repeat(2,1fr)}.toplabel{display:none}}
+@media(max-width:620px){.main{padding:22px 15px 45px}.topbar{padding:0 16px}.pill{display:none}.hero{min-height:auto;padding:26px 23px}.hero h1{font-size:28px}.hero:before{right:-220px}.hero:after{display:none}.stats{gap:10px}.stat{padding:13px}.statvalue{font-size:24px}.topics{grid-template-columns:1fr}.actioncards{grid-template-columns:1fr}.resourcecards{grid-template-columns:1fr}.qcard{padding:23px 18px}.qtext{font-size:17px;margin:22px 0}.choice{padding:14px 7px}.lessonbody{padding:22px}.formrow{grid-template-columns:1fr}.pageheading{font-size:25px}.resultgrid{gap:5px}.resulttile{padding:10px}.herobuttons .btn{flex:1}}
+
+/* Conta / painel administrativo */
+.account-button{display:inline-flex;gap:8px;align-items:center;justify-content:center;background:var(--card,#fff);border:1px solid var(--border);border-radius:12px;color:var(--text);font-size:12px;padding:9px 12px;cursor:pointer;font-weight:700;max-width:195px}.account-button span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.cloud-overlay{position:fixed;inset:0;background:rgba(20,18,35,.7);z-index:2000;display:grid;place-items:center;padding:15px;overflow-y:auto}.cloud-panel{background:var(--card,#fff);color:var(--text);border-radius:20px;padding:27px;width:min(480px,96vw);max-height:94vh;overflow:auto;box-shadow:0 25px 100px #0005;border:1px solid var(--border)}.cloud-panel.wide{width:min(960px,96vw)}.cloud-heading{font-size:25px;letter-spacing:-.6px;margin:0 0 8px}.cloud-muted{color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 16px}.cloud-field{display:grid;gap:6px;margin:12px 0;font-size:12px;font-weight:650}.cloud-field input{width:100%;box-sizing:border-box;border:1px solid var(--border);border-radius:10px;padding:12px;background:var(--bg);color:var(--text);font:inherit}.cloud-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.cloud-actions button{font-size:13px}.cloud-error{background:#fff0f0;color:#a52727;padding:10px 12px;border-radius:8px;font-size:12px;margin:12px 0}.cloud-good{background:#e7f7ef;color:#086439;padding:10px 12px;border-radius:8px;font-size:12px;margin:12px 0}.cloud-headrow{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.cloud-close{background:transparent;border:0;color:var(--muted);font-size:22px;cursor:pointer}.cloud-table{width:100%;border-collapse:collapse;font-size:12px}.cloud-table th{text-align:left;font-size:11px;color:var(--muted);padding:10px;border-bottom:1px solid var(--border)}.cloud-table td{padding:11px 10px;border-bottom:1px solid var(--border);word-break:break-word}.cloud-table tr.selectable{cursor:pointer}.cloud-table tr.selectable:hover{background:var(--bg)}.cloud-scroll{overflow:auto;max-height:52vh}.cloud-badge{display:inline-block;padding:6px 10px;border-radius:8px;background:var(--bg);font-size:11px}.cloud-link{background:none;border:0;color:var(--primary,#7452d9);font-size:12px;cursor:pointer;padding:0;text-decoration:underline}.cloud-check{font-weight:700}.cloud-top-note{margin-top:12px;color:var(--muted);font-size:11px;line-height:1.7}@media(max-width:600px){.account-button span{display:none}.cloud-panel{padding:21px}.cloud-table{font-size:11px}}
+
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+ <div class="brand"><div class="brandmark">P</div><div><div class="brandtitle">petroprep<span style="color:#b8a6ff">.</span></div><div class="brandcaption">Seu espaço de estudo</div></div></div>
+ <div class="navsection">Visão geral</div>
+ <nav id="navigation">
+ <button class="navitem active" data-view="dashboard"><span class="navicon">◫</span> Painel inicial</button>
+ <button class="navitem" data-view="trilhas"><span class="navicon">▤</span> Matérias e aulas</button>
+ <button class="navitem" data-view="questoes"><span class="navicon">◉</span> Banco de questões</button>
+ <button class="navitem" data-view="simulados"><span class="navicon">◴</span> Simulados</button>
+ <button class="navitem" data-view="erros"><span class="navicon">✎</span> Caderno de erros</button>
+ <div class="navsection">Organização</div>
+ <button class="navitem" data-view="plano"><span class="navicon">▦</span> Plano de 12 semanas</button>
+ <button class="navitem" data-view="biblioteca"><span class="navicon">▧</span> Biblioteca</button>
+ <button class="navitem" data-view="gerenciar"><span class="navicon">⚙</span> Gerenciar conteúdo</button>
+ </nav>
+ <div class="sidebottom"><div class="sidepromo"><strong>Um passo de cada vez. ✦</strong><p>Treine com questões autorais de Certo ou Errado e acompanhe sua evolução.</p><button data-action="start-quick">Começar 10 questões ↗</button></div><div class="sidefoot">Base: edital Petrobras 2021/2022<br>Projeto independente • versão 1.0</div></div>
+</aside>
+<div id="mobileoverlay" class="mobileoverlay"></div>
+<div class="content">
+<header class="topbar"><div style="display:flex;gap:14px;align-items:center"><button class="iconbtn burger" data-action="menu" aria-label="Abrir menu">☰</button><span class="toplabel" id="breadcrumb">Seu painel de aprendizagem</span></div><div class="topright"><span class="pill">✦ ENGENHARIA DE PETRÓLEO</span><button class="iconbtn" id="themeToggle" data-action="theme" aria-label="Alternar tema">◐</button><button class="account-button" id="cloudAccount" type="button" aria-label="Conta e sincronização">◉ <span id="cloudAccountText">Modo local</span></button></div></header>
+<main id="main" class="main" tabindex="-1"></main>
+</div>
+</div>
+<script>
+/* Chaves PÚBLICAS do projeto Supabase. Nunca use service_role/secret aqui. */
+window.PETROPREP_CONFIG = {
+  url: '',
+  publishableKey: ''
+};
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* PETROPREP: atualize este arquivo para adicionar matérias/questões. */
+window.PETRO_DATA = {
+  "metadata": {
+    "title": "PetroPrep",
+    "version": "1.0.0",
+    "updated": "2026-11-07",
+    "exam": "Petrobras • Engenharia de Petróleo",
+    "note": "Questões autorais inspiradas no formato Cebraspe; não reproduzem questões oficiais."
+  },
+  "links": {
+    "edital": "https://www.petrobras.com.br/documents/d/f3a44542-113e-11ee-be56-0242ac120002/editalpetroleobrasileiro",
+    "prova": "https://www.qconcursos.com/questoes-de-concursos/provas/cespe-cebraspe-2022-petrobras-engenharia-de-petroleo",
+    "univesp": "https://apps.univesp.br/integra/",
+    "khan": "https://pt.khanacademy.org/",
+    "openstax": "https://openstax.org/subjects/science",
+    "mit": "https://ocw.mit.edu/",
+    "bpg": "https://wiki.aapg.org/Petroleum_systems",
+    "up": "https://publicacoesup.petrobras.com.br/peld/catalog/",
+    "pressao": "https://publicacoesup.petrobras.com.br/peld/catalog/book/52",
+    "perfuracao": "https://publicacoesup.petrobras.com.br/peld/catalog/book/22",
+    "british": "https://learnenglish.britishcouncil.org/free-resources/reading/b2",
+    "portugues": "https://www.normaculta.com.br/",
+    "stat": "https://pt.khanacademy.org/math/statistics-probability",
+    "petrobras": "https://petrobras.com.br/quem-somos/concursos",
+    "ingles": "https://learnenglish.britishcouncil.org/"
+  },
+  "topics": [
+    {
+      "id": "algebra",
+      "block": "I",
+      "title": "Álgebra Linear",
+      "summary": "Estude operações matriciais, determinante, sistemas lineares, posto, autovalores e autovetores. Um sistema Ax=b tem solução única se A for quadrada e det(A)≠0.",
+      "formula": "det(A) ≠ 0  ⇒  A inversível  ⇒  solução única para Ax=b",
+      "example": "Ex.: A=[[2,0],[0,3]] ⇒ det(A)=6; autovalores 2 e 3.",
+      "links": [
+        "univesp",
+        "khan"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "calculo",
+      "block": "I",
+      "title": "Cálculo Diferencial e Integral",
+      "summary": "Revise derivadas, integrais, máximos/mínimos, regra da cadeia e teorema fundamental do cálculo. Observe unidades e hipóteses de continuidade.",
+      "formula": "d(xⁿ)/dx = n·xⁿ⁻¹  |  ∫xⁿ dx = xⁿ⁺¹/(n+1)+C",
+      "example": "Ex.: s(t)=3t² → v(t)=6t; entre 0 e 2 s, Δs=12 m.",
+      "links": [
+        "univesp",
+        "khan"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "fisica",
+      "block": "I",
+      "title": "Física: Movimento e Trabalho",
+      "summary": "Domine as leis de Newton, impulso, quantidade de movimento e trabalho/energia. Faça diagramas de corpo livre antes dos cálculos.",
+      "formula": "ΣF = m·a  |  J = Δp  |  W_res = ΔK",
+      "example": "Ex.: uma força resultante de 20 N em 4 kg produz a=5 m/s².",
+      "links": [
+        "openstax",
+        "mit"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "fluidos",
+      "block": "I",
+      "title": "Mecânica dos Fluidos",
+      "summary": "Priorize pressão hidrostática, empuxo, continuidade, quantidade de movimento e Bernoulli com suas hipóteses. Diferencie vazão volumétrica de mássica.",
+      "formula": "p=p₀+ρgh  |  ṁ=ρAV  |  p+½ρv²+ρgz=const. (hipóteses)",
+      "example": "Ex.: água incompressível em tubo com A₂=A₁/2 → v₂=2v₁.",
+      "links": [
+        "openstax",
+        "univesp"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "resistencia",
+      "block": "I",
+      "title": "Resistência dos Materiais",
+      "summary": "Tensões normais e cisalhantes, deformações, lei de Hooke, esforços cortantes e momentos fletores.",
+      "formula": "σ=N/A  |  ε=ΔL/L  |  σ=Eε (regime linear)",
+      "example": "Ex.: barra com N=20 kN e A=200 mm² → σ=100 MPa.",
+      "links": [
+        "mit",
+        "univesp"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "vetorial",
+      "block": "II",
+      "title": "Cálculo Vetorial e Matricial",
+      "summary": "Produto escalar, produto vetorial, gradiente, divergente e sistemas coordenados. Identifique grandezas escalares e vetoriais.",
+      "formula": "a·b=|a||b|cosθ  |  ∇·v=∂vₓ/∂x+∂vᵧ/∂y+∂v_z/∂z",
+      "example": "Ex.: vetores ortogonais têm produto escalar zero.",
+      "links": [
+        "univesp",
+        "mit"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "combinatoria",
+      "block": "II",
+      "title": "Análise Combinatória",
+      "summary": "Princípio multiplicativo, arranjos, permutações, combinações. Em combinações, a ordem não importa.",
+      "formula": "C(n,k)=n!/[k!(n−k)!]",
+      "example": "Ex.: escolher 2 pessoas dentre 5: C(5,2)=10.",
+      "links": [
+        "khan"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "progressoes",
+      "block": "II",
+      "title": "Progressões",
+      "summary": "Progressões aritméticas e geométricas; termos gerais e somas. Observe a razão e se a progressão é finita.",
+      "formula": "PA: aₙ=a₁+(n−1)r  |  PG: aₙ=a₁qⁿ⁻¹",
+      "example": "Ex.: PA (2,5,8,...): a₆=17.",
+      "links": [
+        "khan"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "geomplana",
+      "block": "II",
+      "title": "Geometria Plana",
+      "summary": "Áreas, ângulos, semelhança de triângulos e teorema de Pitágoras. Revise conversão entre unidades de área.",
+      "formula": "A_círculo=πr²  |  a²+b²=c² (triângulo retângulo)",
+      "example": "Ex.: círculo de raio 2 m: A=4π m².",
+      "links": [
+        "khan"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "geomesp",
+      "block": "II",
+      "title": "Geometria Espacial",
+      "summary": "Volumes e áreas de sólidos: cilindros, cones, prismas e esferas; interpretação espacial e unidades cúbicas.",
+      "formula": "V_cilindro=πr²h  |  V_esfera=4πr³/3",
+      "example": "Ex.: cilindro com r=1 m e h=3 m → V=3π m³.",
+      "links": [
+        "khan"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "geomanal",
+      "block": "II",
+      "title": "Geometria Analítica",
+      "summary": "Retas, planos, distância entre pontos, vetores e cônicas.",
+      "formula": "d(P,Q)=√[(x₂−x₁)²+(y₂−y₁)²]",
+      "example": "Ex.: pontos (0,0) e (3,4) estão a 5 unidades.",
+      "links": [
+        "khan",
+        "univesp"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "estatica",
+      "block": "II",
+      "title": "Estática de Corpos Rígidos",
+      "summary": "Equilíbrio de forças e momentos, vínculos, apoios e diagramas de corpo livre.",
+      "formula": "ΣF=0  |  ΣM=0",
+      "example": "Ex.: viga biapoiada com carga central P apresenta reações P/2 em cada apoio (caso simétrico).",
+      "links": [
+        "openstax",
+        "mit"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "acustica",
+      "block": "II",
+      "title": "Acústica",
+      "summary": "Ondas, frequência, comprimento de onda, velocidade de propagação e nível sonoro.",
+      "formula": "v=fλ  |  Lp=20 log₁₀(p/p_ref)",
+      "example": "Ex.: som de 340 m/s com f=170 Hz → λ=2 m.",
+      "links": [
+        "openstax"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "otica",
+      "block": "II",
+      "title": "Óptica",
+      "summary": "Reflexão, refração e lei de Snell; lentes e formação de imagens.",
+      "formula": "n₁ senθ₁=n₂ senθ₂",
+      "example": "Ex.: em uma interface sem absorção, a frequência da luz se mantém.",
+      "links": [
+        "openstax"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "eletricidade",
+      "block": "II",
+      "title": "Eletricidade e Eletromagnetismo",
+      "summary": "Lei de Ohm, resistores, potência, circuitos e indução eletromagnética.",
+      "formula": "V=RI  |  P=VI=I²R",
+      "example": "Ex.: resistor de 5 Ω com 2 A dissipa 20 W.",
+      "links": [
+        "openstax"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "inercia",
+      "block": "II",
+      "title": "Momento de Inércia de Áreas",
+      "summary": "Momento de inércia geométrico, teorema dos eixos paralelos e aplicação à flexão. Não confunda com momento de inércia de massa.",
+      "formula": "Iₓ,retângulo = b h³/12 (eixo centroidal)",
+      "example": "Ex.: dobrar h quadruplica? Não: aumenta I por fator 8 se b for fixo.",
+      "links": [
+        "mit",
+        "univesp"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "elasticidade",
+      "block": "II",
+      "title": "Teoria da Elasticidade",
+      "summary": "Relações constitutivas, módulo de Young, Poisson e elasticidade linear isotrópica.",
+      "formula": "ε_transversal=−ν·ε_longitudinal (uniaxial, isotrópico)",
+      "example": "Ex.: se ε_long=0,001 e ν=0,3 → ε_trans=−0,0003.",
+      "links": [
+        "mit"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "termo",
+      "block": "II",
+      "title": "Termodinâmica",
+      "summary": "Propriedades de substâncias puras, calor, trabalho, 1ª e 2ª leis, entropia e processos. Diferencie sistema fechado de volume de controle.",
+      "formula": "ΔU=Q−W (sistema fechado, convenção W realizado pelo sistema)",
+      "example": "Ex.: sistema recebe 200 J de calor e realiza 50 J de trabalho: ΔU=150 J.",
+      "links": [
+        "openstax",
+        "univesp"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "gases",
+      "block": "II",
+      "title": "Gases, Misturas e Soluções Ideais",
+      "summary": "Equação de estado ideal, pressão parcial, misturas e fração molar. Atenção à temperatura em kelvin.",
+      "formula": "pV=nRT  |  pᵢ=yᵢ p_total",
+      "example": "Ex.: mistura com y_O₂=0,2 a 100 kPa → p_O₂=20 kPa.",
+      "links": [
+        "openstax"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "calor",
+      "block": "II",
+      "title": "Transferência de Calor",
+      "summary": "Condução permanente, convecção e radiação: leis de Fourier, Newton e Stefan–Boltzmann. Verifique sinais e unidades.",
+      "formula": "q̇_cond=−kA·dT/dx  |  q̇_conv=hA(Ts−T∞)",
+      "example": "Ex.: parede plana: k=2 W/(m·K), A=1 m², L=0,1 m, ΔT=10 K → |q̇|=200 W.",
+      "links": [
+        "univesp",
+        "openstax"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "massa",
+      "block": "II",
+      "title": "Transferência de Massa",
+      "summary": "Difusão molecular, lei de Fick, gradientes de concentração e analogia com transporte de calor.",
+      "formula": "J_A=−D_AB dC_A/dx (1D, difusão)",
+      "example": "Ex.: moléculas difundem, em média, de maior para menor concentração em condições usuais.",
+      "links": [
+        "mit",
+        "openstax"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "logica",
+      "block": "III",
+      "title": "Lógica",
+      "summary": "Proposições, implicação, negação, equivalências e tabelas-verdade.",
+      "formula": "p⇒q é falsa somente quando p é verdadeira e q é falsa.",
+      "example": "Ex.: negar “todos passaram” equivale a “pelo menos um não passou”.",
+      "links": [
+        "khan"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "conjuntos",
+      "block": "III",
+      "title": "Conjuntos",
+      "summary": "União, interseção, complemento, cardinalidade e diagramas de Venn.",
+      "formula": "|A∪B|=|A|+|B|−|A∩B|",
+      "example": "Ex.: 12 estudam A, 8 estudam B, 3 ambos → 17 estudam ao menos uma.",
+      "links": [
+        "khan"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "relacoes",
+      "block": "III",
+      "title": "Relações",
+      "summary": "Pares ordenados, domínio, imagem, relações reflexivas, simétricas e transitivas.",
+      "formula": "R⊆A×B; função é relação com uma imagem para cada elemento do domínio.",
+      "example": "Ex.: “é igual a” é reflexiva, simétrica e transitiva.",
+      "links": [
+        "khan"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "funcoes",
+      "block": "III",
+      "title": "Funções",
+      "summary": "Domínio, imagem, composição, inversa, monotonicidade e interpretação de gráficos.",
+      "formula": "(f∘g)(x)=f(g(x))",
+      "example": "Ex.: f(x)=2x+1, g(x)=x² → (f∘g)(3)=19.",
+      "links": [
+        "khan"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "logaritmo",
+      "block": "III",
+      "title": "Logaritmos",
+      "summary": "Propriedades, mudanças de base e funções exponenciais; restrição x>0 para log em base válida.",
+      "formula": "log_b(xy)=log_b x+log_b y",
+      "example": "Ex.: log₁₀(1000)=3.",
+      "links": [
+        "khan"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "trigo",
+      "block": "III",
+      "title": "Trigonometria",
+      "summary": "Seno, cosseno, tangente, identidades trigonométricas e periodicidade.",
+      "formula": "sen²θ+cos²θ=1",
+      "example": "Ex.: sen 30°=0,5 e cos 60°=0,5.",
+      "links": [
+        "khan"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "prob",
+      "block": "III",
+      "title": "Probabilidade",
+      "summary": "Probabilidade condicional, independência, Bayes e distribuições básicas.",
+      "formula": "P(A|B)=P(A∩B)/P(B)",
+      "example": "Ex.: lançamentos independentes de moeda: P(duas caras)=1/4.",
+      "links": [
+        "stat"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "estat",
+      "block": "III",
+      "title": "Estatística Descritiva",
+      "summary": "Média, mediana, variância, desvio-padrão, quantis e interpretação de gráficos.",
+      "formula": "x̄=(Σxᵢ)/n  |  s²=Σ(xᵢ−x̄)²/(n−1)",
+      "example": "Ex.: dados 1, 2, 9 → mediana=2 e média=4.",
+      "links": [
+        "stat"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "financeira",
+      "block": "III",
+      "title": "Matemática Financeira",
+      "summary": "Juros simples e compostos, valor presente e taxa efetiva.",
+      "formula": "VF=VP(1+i)ⁿ (juros compostos)",
+      "example": "Ex.: R$ 1.000 a 10% ao período por 2 períodos → R$ 1.210.",
+      "links": [
+        "khan"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "geo",
+      "block": "III",
+      "title": "Geologia e Geofísica do Petróleo",
+      "summary": "Sistemas petrolíferos: rocha geradora, migração, reservatório, selo e armadilhas. A sísmica usa ondas para inferir estruturas em subsuperfície.",
+      "formula": "Tempo de trânsito sísmico (aproximação vertical): t≈2z/v",
+      "example": "Ex.: refletor a z=1.500 m com v=3.000 m/s → tempo duplo ≈1 s.",
+      "links": [
+        "bpg",
+        "up"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "perfuracao",
+      "block": "III",
+      "title": "Perfuração e Avaliação de Formações",
+      "summary": "Sondas, coluna de perfuração, lama, pressão hidrostática e circulação; perfilagem e testes ajudam a caracterizar o poço e a formação.",
+      "formula": "p_hid≈ρ g h  |  pressão no fundo depende da densidade do fluido e da profundidade.",
+      "example": "Ex.: lama de 1.200 kg/m³ em coluna de 1.000 m → pressão hidrostática ≈11,8 MPa.",
+      "links": [
+        "perfuracao",
+        "up"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "reservatorios",
+      "block": "III",
+      "title": "Completação e Reservatórios",
+      "summary": "Completação prepara o poço para produzir/injetar. Estude porosidade, permeabilidade, saturações, pressão e balanço de fluidos.",
+      "formula": "φ=V_poroso/V_total  |  Darcy (1D): Q=(kA/μ)(Δp/L)",
+      "example": "Ex.: amostra de 100 cm³ com 20 cm³ de poros → φ=20%.",
+      "links": [
+        "pressao",
+        "up"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "elevacao",
+      "block": "III",
+      "title": "Elevação e Escoamento de Petróleo",
+      "summary": "Elevação natural/artificial, perdas de pressão, escoamento multifásico e curvas de produtividade.",
+      "formula": "Δp_fricção>0 na direção do fluxo passivo; produção exige energia disponível.",
+      "example": "Ex.: gas lift reduz a densidade média da coluna produzida e pode facilitar a elevação.",
+      "links": [
+        "up",
+        "pressao"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "submarinos",
+      "block": "III",
+      "title": "Sistemas Submarinos e Processamento Primário",
+      "summary": "Árvores de natal molhadas, manifolds, risers e linhas de produção. Separação primária de óleo, água e gás antes do processamento subsequente.",
+      "formula": "Separação trifásica: correntes de óleo, gás e água.",
+      "example": "Ex.: riser conecta instalações no fundo do mar à unidade de produção de superfície.",
+      "links": [
+        "up"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "quimica",
+      "block": "III",
+      "title": "Química Básica",
+      "summary": "Estequiometria, mol, soluções, equilíbrio, ácido-base e funções orgânicas. Balanceie reações antes dos cálculos.",
+      "formula": "n=m/M  |  C=n/V  |  PV=nRT (gás ideal)",
+      "example": "Ex.: 18 g de H₂O correspondem aproximadamente a 1 mol.",
+      "links": [
+        "khan",
+        "openstax"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "portugues",
+      "block": "BÁSICOS",
+      "title": "Língua Portuguesa",
+      "summary": "Interpretação e inferência, coesão, regência, concordância, pontuação e reescrita sem mudança de sentido.",
+      "formula": "Estratégia: separe informação literal de inferência; verifique se a reescrita altera sentido ou correção.",
+      "example": "Ex.: “Havia problemas” — verbo haver impessoal permanece no singular.",
+      "links": [
+        "portugues"
+      ],
+      "level": "Intermediário"
+    },
+    {
+      "id": "ingles",
+      "block": "BÁSICOS",
+      "title": "Língua Inglesa",
+      "summary": "Reading comprehension, vocabulário em contexto, conectores, modal verbs, tempos verbais e referência pronominal.",
+      "formula": "Although=embora  |  however=entretanto  |  therefore=portanto",
+      "example": "Ex.: “Although production rose, costs increased” indica contraste entre as orações.",
+      "links": [
+        "british",
+        "ingles"
+      ],
+      "level": "Intermediário"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q001",
+      "topic": "algebra",
+      "text": "Toda matriz quadrada com determinante nulo é inversível.",
+      "answer": false,
+      "explanation": "Determinante nulo implica matriz singular, sem inversa.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q002",
+      "topic": "algebra",
+      "text": "Se A é uma matriz diagonal 2×2 com entradas 3 e 5, então det(A)=15.",
+      "answer": true,
+      "explanation": "Determinante de matriz diagonal é produto dos elementos diagonais.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q003",
+      "topic": "calculo",
+      "text": "A derivada de f(x)=x³−4x é 3x²−4.",
+      "answer": true,
+      "explanation": "Aplicando linearidade e regra da potência.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q004",
+      "topic": "calculo",
+      "text": "Se f′(x)=0 em um ponto, então esse ponto é obrigatoriamente máximo local.",
+      "answer": false,
+      "explanation": "Pode ser mínimo, inflexão estacionária ou outra situação.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q005",
+      "topic": "fisica",
+      "text": "Para um corpo de massa constante, a força resultante é igual à taxa de variação de sua quantidade de movimento.",
+      "answer": true,
+      "explanation": "Segunda lei de Newton: ΣF=dp/dt.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q006",
+      "topic": "fisica",
+      "text": "Se o trabalho da força resultante sobre um corpo é nulo, sua energia cinética permanece constante.",
+      "answer": true,
+      "explanation": "Teorema trabalho-energia: W_res=ΔK.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q007",
+      "topic": "fluidos",
+      "text": "Em escoamento permanente incompressível por um único tubo sem ramificações, reduzir a área transversal à metade dobra a velocidade média.",
+      "answer": true,
+      "explanation": "Da continuidade, A₁V₁=A₂V₂.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q008",
+      "topic": "fluidos",
+      "text": "A pressão manométrica em um líquido em repouso depende exclusivamente da área do recipiente.",
+      "answer": false,
+      "explanation": "p_man=ρgh, independentemente da forma ou área do recipiente.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q009",
+      "topic": "fluidos",
+      "text": "A equação de Bernoulli na forma p+ρv²/2+ρgz=constante pode ser aplicada sem correções a qualquer escoamento viscoso com perdas significativas.",
+      "answer": false,
+      "explanation": "A forma simples exige condições como perdas desprezíveis ao longo da linha de corrente.",
+      "difficulty": 3,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q010",
+      "topic": "resistencia",
+      "text": "Uma barra de seção constante sujeita a tração axial N apresenta tensão média normal N/A.",
+      "answer": true,
+      "explanation": "Definição de tensão normal média.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q011",
+      "topic": "resistencia",
+      "text": "No regime elástico linear uniaxial, duplicar a tensão duplica a deformação, mantendo E constante.",
+      "answer": true,
+      "explanation": "σ=Eε; razão linear.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q012",
+      "topic": "vetorial",
+      "text": "O produto escalar de dois vetores perpendiculares é nulo.",
+      "answer": true,
+      "explanation": "a·b=|a||b|cos(90°)=0.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q013",
+      "topic": "vetorial",
+      "text": "A divergência de um campo vetorial é sempre um campo vetorial.",
+      "answer": false,
+      "explanation": "Divergência é um campo escalar.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q014",
+      "topic": "combinatoria",
+      "text": "O número de maneiras de selecionar 2 pessoas entre 5, sem importar a ordem, é 20.",
+      "answer": false,
+      "explanation": "Combinações: C(5,2)=10.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q015",
+      "topic": "progressoes",
+      "text": "Numa progressão aritmética de razão 3, a diferença entre termos consecutivos é sempre 3.",
+      "answer": true,
+      "explanation": "É a própria definição de razão da PA.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q016",
+      "topic": "geomplana",
+      "text": "A área de um círculo dobra quando seu raio dobra.",
+      "answer": false,
+      "explanation": "A=πr²: duplicar r quadruplica a área.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q017",
+      "topic": "geomesp",
+      "text": "O volume de um cilindro reto de base circular é πr²h.",
+      "answer": true,
+      "explanation": "Área da base vezes altura.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q018",
+      "topic": "geomanal",
+      "text": "A distância entre os pontos (1,1) e (4,5) é 5.",
+      "answer": true,
+      "explanation": "√(3²+4²)=5.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q019",
+      "topic": "estatica",
+      "text": "Para equilíbrio estático de um corpo rígido plano, as condições ΣFₓ=0, ΣFᵧ=0 e ΣM=0 são necessárias.",
+      "answer": true,
+      "explanation": "São as três equações escalares de equilíbrio plano.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q020",
+      "topic": "estatica",
+      "text": "Um corpo pode estar em equilíbrio estático mesmo com momento resultante diferente de zero.",
+      "answer": false,
+      "explanation": "Equilíbrio exige momento resultante nulo.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q021",
+      "topic": "acustica",
+      "text": "Uma onda de frequência 200 Hz que se propaga a 400 m/s possui comprimento de onda de 2 m.",
+      "answer": true,
+      "explanation": "λ=v/f=2 m.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q022",
+      "topic": "otica",
+      "text": "Na refração, a frequência da luz deve necessariamente mudar ao passar de um meio para outro.",
+      "answer": false,
+      "explanation": "A frequência se conserva; velocidade e comprimento de onda podem variar.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q023",
+      "topic": "eletricidade",
+      "text": "Um resistor de 10 Ω sob corrente de 2 A dissipa 40 W.",
+      "answer": true,
+      "explanation": "P=I²R=4×10=40 W.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q024",
+      "topic": "inercia",
+      "text": "Para retângulo em torno do eixo centroidal paralelo à base, o momento de inércia de área é proporcional ao cubo da altura.",
+      "answer": true,
+      "explanation": "I=bh³/12.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q025",
+      "topic": "elasticidade",
+      "text": "Para material isotrópico sob tração uniaxial, deformação transversal normalmente tem sinal oposto à longitudinal quando ν>0.",
+      "answer": true,
+      "explanation": "ε_t=−νε_l.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q026",
+      "topic": "termo",
+      "text": "Em um ciclo termodinâmico completo, a variação da energia interna do sistema é nula.",
+      "answer": true,
+      "explanation": "Energia interna é função de estado; volta ao estado inicial.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q027",
+      "topic": "termo",
+      "text": "Em um ciclo termodinâmico completo, a geração de entropia é necessariamente nula.",
+      "answer": false,
+      "explanation": "Entropia do sistema retorna ao início, mas a geração pode ser positiva em ciclo irreversível.",
+      "difficulty": 3,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q028",
+      "topic": "termo",
+      "text": "Um sistema fechado recebe 150 J de calor e realiza 50 J de trabalho. Sua variação de energia interna é 100 J.",
+      "answer": true,
+      "explanation": "ΔU=Q−W=150−50=100 J.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q029",
+      "topic": "gases",
+      "text": "Para gás ideal a volume e quantidade de matéria constantes, a pressão absoluta é proporcional à temperatura absoluta.",
+      "answer": true,
+      "explanation": "Da equação de estado ideal pV=nRT; para V e n constantes, p/T permanece constante.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q030",
+      "topic": "gases",
+      "text": "Em mistura ideal gasosa, a soma das pressões parciais é igual à pressão total.",
+      "answer": true,
+      "explanation": "Lei de Dalton.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q031",
+      "topic": "calor",
+      "text": "Numa parede plana com k e ΔT constantes, dobrar a espessura reduz pela metade a taxa de condução estacionária.",
+      "answer": true,
+      "explanation": "|q̇|=kAΔT/L.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q032",
+      "topic": "calor",
+      "text": "O fluxo radiativo líquido de um corpo negro depende linearmente da temperatura absoluta.",
+      "answer": false,
+      "explanation": "Depende de T⁴, para troca com ambiente idealizado.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q033",
+      "topic": "massa",
+      "text": "A lei de Fick relaciona fluxo difusivo a gradiente de concentração.",
+      "answer": true,
+      "explanation": "J_A=−D_AB ∇C_A nas hipóteses apropriadas.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q034",
+      "topic": "logica",
+      "text": "A proposição “se p então q” é falsa quando p é verdadeira e q é falsa.",
+      "answer": true,
+      "explanation": "É a única linha falsa da implicação material.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q035",
+      "topic": "conjuntos",
+      "text": "Se |A|=10, |B|=8 e |A∩B|=3, então |A∪B|=15.",
+      "answer": true,
+      "explanation": "Inclusão-exclusão: 10+8−3=15.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q036",
+      "topic": "relacoes",
+      "text": "Toda relação reflexiva é necessariamente simétrica.",
+      "answer": false,
+      "explanation": "Uma propriedade não implica a outra.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q037",
+      "topic": "funcoes",
+      "text": "Se f(x)=2x+1, então f(3)=7.",
+      "answer": true,
+      "explanation": "f(3)=2×3+1=7.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q038",
+      "topic": "logaritmo",
+      "text": "log₁₀(100)+log₁₀(10)=3.",
+      "answer": true,
+      "explanation": "log₁₀(100)=2 e log₁₀(10)=1; portanto a soma é 3.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q039",
+      "topic": "trigo",
+      "text": "Para qualquer ângulo real θ, sen²θ+cos²θ=1.",
+      "answer": true,
+      "explanation": "Identidade trigonométrica fundamental.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q040",
+      "topic": "prob",
+      "text": "Se A e B são eventos independentes, então P(A∩B)=P(A)P(B).",
+      "answer": true,
+      "explanation": "Definição de independência.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q041",
+      "topic": "prob",
+      "text": "Se P(A)=0,6 e P(B)=0,5, então P(A∩B)=0,3 necessariamente.",
+      "answer": false,
+      "explanation": "Só seria obrigatório com independência.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q042",
+      "topic": "estat",
+      "text": "A mediana é sempre igual à média aritmética.",
+      "answer": false,
+      "explanation": "Uma distribuição assimétrica pode ter média e mediana diferentes.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q043",
+      "topic": "estat",
+      "text": "No conjunto 2, 3, 100, a mediana é 3.",
+      "answer": true,
+      "explanation": "Ordenando os três valores, o central é 3.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q044",
+      "topic": "financeira",
+      "text": "Um capital de R$ 1.000 aplicado a juros compostos de 10% ao período resulta em R$ 1.210 após dois períodos.",
+      "answer": true,
+      "explanation": "1000×1,1²=1210.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q045",
+      "topic": "geo",
+      "text": "Um sistema petrolífero convencional pode exigir rocha geradora, migração, reservatório, selo e armadilha.",
+      "answer": true,
+      "explanation": "São elementos/processos clássicos do sistema petrolífero.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q046",
+      "topic": "geo",
+      "text": "A sísmica de reflexão fornece diretamente uma fotografia literal e sem ambiguidades das rochas no subsolo.",
+      "answer": false,
+      "explanation": "A sísmica mede resposta de ondas; requer aquisição, processamento e interpretação.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q047",
+      "topic": "geo",
+      "text": "Para trajetória vertical com velocidade sísmica constante de 2.000 m/s e refletor a 1.000 m, o tempo de trânsito de ida e volta é 1 s.",
+      "answer": true,
+      "explanation": "t=2z/v=2×1000/2000=1 s.",
+      "difficulty": 3,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q048",
+      "topic": "perfuracao",
+      "text": "A pressão hidrostática exercida por uma coluna de lama de perfuração cresce com a densidade e a altura vertical da coluna.",
+      "answer": true,
+      "explanation": "p=ρgh, desprezadas correções.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q049",
+      "topic": "perfuracao",
+      "text": "A perfilagem de poços pode auxiliar a avaliação de propriedades das formações atravessadas.",
+      "answer": true,
+      "explanation": "Perfis registram respostas físicas que ajudam a interpretar as formações.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q050",
+      "topic": "perfuracao",
+      "text": "Perfuração direcional é necessariamente realizada com poço horizontal.",
+      "answer": false,
+      "explanation": "Inclui poços desviados, horizontais e outros tipos de trajetórias.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q051",
+      "topic": "reservatorios",
+      "text": "Porosidade é a razão entre volume de poros e volume total da rocha.",
+      "answer": true,
+      "explanation": "φ=V_poros/V_total.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q052",
+      "topic": "reservatorios",
+      "text": "Permeabilidade e porosidade são sinônimos e sempre têm o mesmo valor numérico.",
+      "answer": false,
+      "explanation": "Porosidade mede fração de vazios; permeabilidade mede facilidade de fluxo.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q053",
+      "topic": "reservatorios",
+      "text": "Pela lei de Darcy idealizada, mantendo-se os demais fatores, dobrar a viscosidade reduz à metade a vazão.",
+      "answer": true,
+      "explanation": "Q∝1/μ sob hipóteses de Darcy.",
+      "difficulty": 3,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q054",
+      "topic": "elevacao",
+      "text": "A injeção de gás em coluna de produção pode reduzir sua densidade média e auxiliar a elevação.",
+      "answer": true,
+      "explanation": "Princípio do gas lift.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q055",
+      "topic": "elevacao",
+      "text": "Em linhas de produção, perdas por atrito são sempre inexistentes em escoamento real.",
+      "answer": false,
+      "explanation": "Escoamentos reais têm dissipação viscosa, exceto idealizações.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q056",
+      "topic": "submarinos",
+      "text": "Em operações offshore, um riser pode conduzir fluidos entre o fundo do mar e uma instalação de superfície.",
+      "answer": true,
+      "explanation": "Função típica de risers de produção.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q057",
+      "topic": "submarinos",
+      "text": "O processamento primário de petróleo pode separar fases de óleo, gás e água.",
+      "answer": true,
+      "explanation": "A separação trifásica é etapa típica da produção.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q058",
+      "topic": "quimica",
+      "text": "18 g de água, com massa molar aproximadamente igual a 18 g/mol, correspondem a aproximadamente 1 mol.",
+      "answer": true,
+      "explanation": "n=m/M=18/18=1.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q059",
+      "topic": "quimica",
+      "text": "Em reação química balanceada, a quantidade total de átomos de cada elemento se conserva.",
+      "answer": true,
+      "explanation": "Conservação de elementos na reação química.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q060",
+      "topic": "portugues",
+      "text": "Na oração “Havia muitos problemas no projeto”, a flexão do verbo haver no singular está correta.",
+      "answer": true,
+      "explanation": "Haver no sentido de existir é impessoal e fica no singular.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q061",
+      "topic": "portugues",
+      "text": "As expressões “portanto” e “entretanto” estabelecem, respectivamente, relações de conclusão e oposição.",
+      "answer": true,
+      "explanation": "Conectivos introduzem conclusão e adversidade.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q062",
+      "topic": "ingles",
+      "text": "The connector “although” generally introduces a contrast or concession.",
+      "answer": true,
+      "explanation": "Although significa embora/ainda que.",
+      "difficulty": 1,
+      "origin": "Autoral • estilo Cebraspe"
+    },
+    {
+      "id": "Q063",
+      "topic": "ingles",
+      "text": "In “Production has increased since 2020”, the present perfect indicates a connection between a past starting point and the present.",
+      "answer": true,
+      "explanation": "O present perfect pode expressar processo iniciado no passado com relevância atual.",
+      "difficulty": 2,
+      "origin": "Autoral • estilo Cebraspe"
+    }
+  ],
+  "weeks": [
+    {
+      "number": 1,
+      "range": "16–22 nov",
+      "title": "Diagnóstico + Álgebra Linear e Cálculo",
+      "topics": [
+        "algebra",
+        "calculo"
+      ]
+    },
+    {
+      "number": 2,
+      "range": "23–29 nov",
+      "title": "Mecânica dos Fluidos",
+      "topics": [
+        "fluidos"
+      ]
+    },
+    {
+      "number": 3,
+      "range": "30 nov–6 dez",
+      "title": "Resistência dos Materiais e Mecânica",
+      "topics": [
+        "resistencia",
+        "fisica",
+        "estatica"
+      ]
+    },
+    {
+      "number": 4,
+      "range": "7–13 dez",
+      "title": "Termodinâmica e Transferência de Calor",
+      "topics": [
+        "termo",
+        "calor"
+      ]
+    },
+    {
+      "number": 5,
+      "range": "14–20 dez",
+      "title": "Matemática complementar",
+      "topics": [
+        "combinatoria",
+        "geomplana",
+        "trigo",
+        "financeira"
+      ]
+    },
+    {
+      "number": 6,
+      "range": "21–27 dez",
+      "title": "Física e Química",
+      "topics": [
+        "eletricidade",
+        "otica",
+        "acustica",
+        "quimica"
+      ]
+    },
+    {
+      "number": 7,
+      "range": "28 dez–3 jan",
+      "title": "Estatística + revisão",
+      "topics": [
+        "prob",
+        "estat",
+        "portugues",
+        "ingles"
+      ]
+    },
+    {
+      "number": 8,
+      "range": "4–10 jan",
+      "title": "Geologia e Geofísica",
+      "topics": [
+        "geo"
+      ]
+    },
+    {
+      "number": 9,
+      "range": "11–17 jan",
+      "title": "Perfuração de Poços",
+      "topics": [
+        "perfuracao"
+      ]
+    },
+    {
+      "number": 10,
+      "range": "18–24 jan",
+      "title": "Avaliação, completação e reservatórios",
+      "topics": [
+        "reservatorios"
+      ]
+    },
+    {
+      "number": 11,
+      "range": "25–31 jan",
+      "title": "Elevação, escoamento e sistemas submarinos",
+      "topics": [
+        "elevacao",
+        "submarinos"
+      ]
+    },
+    {
+      "number": 12,
+      "range": "1–7 fev",
+      "title": "Revisão e simulado geral",
+      "topics": [
+        "portugues",
+        "ingles",
+        "fluidos",
+        "termo",
+        "geo"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "title": "Edital oficial • Engenharia de Petróleo",
+      "description": "Petrobras • conteúdo programático, p. 41",
+      "link": "edital"
+    },
+    {
+      "title": "Prova real Petrobras 2022",
+      "description": "Questões reais; resolva no site externo",
+      "link": "prova"
+    },
+    {
+      "title": "Publicações da Universidade Petrobras",
+      "description": "Biblioteca de referências técnicas; acesso varia por obra",
+      "link": "up"
+    },
+    {
+      "title": "Fundamentos da Análise de Testes de Pressão",
+      "description": "Livro técnico sobre reservatórios e testes de pressão",
+      "link": "pressao"
+    },
+    {
+      "title": "Perfuração direcional",
+      "description": "Referência técnica sobre poços direcionais",
+      "link": "perfuracao"
+    },
+    {
+      "title": "Petroleum Systems • AAPG Wiki",
+      "description": "Referência aberta de sistemas petrolíferos",
+      "link": "bpg"
+    },
+    {
+      "title": "UNIVESP",
+      "description": "Aulas de cálculo, física e engenharia",
+      "link": "univesp"
+    },
+    {
+      "title": "Khan Academy",
+      "description": "Matemática, química e estatística",
+      "link": "khan"
+    },
+    {
+      "title": "OpenStax",
+      "description": "Livros abertos de física, química e engenharia básica",
+      "link": "openstax"
+    },
+    {
+      "title": "MIT OpenCourseWare",
+      "description": "Cursos de engenharia e materiais",
+      "link": "mit"
+    },
+    {
+      "title": "British Council",
+      "description": "Inglês e interpretação",
+      "link": "british"
+    }
+  ]
+};
+
+</script>
+<script>
+/* PetroPrep Cloud — autenticação, sincronização e painel de acompanhamento.
+   Somente configuração PÚBLICA no navegador. Banco protegido por RLS (schema.sql). */
+(() => {
+  'use strict';
+  const cfg=window.PETROPREP_CONFIG||{};
+  const enabled=/^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/i.test(String(cfg.url||'')) &&
+    typeof cfg.publishableKey==='string' && cfg.publishableKey.length>20;
+  const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  let db=null, bridge=null, user=null, admin=false, timer=null, syncing=Promise.resolve(), initToken=0;
+  let overlay=null, adminRows=[], adminProfiles=[];
+  const genId=()=>window.crypto?.randomUUID?.()||'00000000-0000-4000-8000-'+Math.random().toString(16).slice(2).padEnd(12,'0').slice(0,12);
+  const unique=a=>[...new Set((a||[]))];
+  const mergeObjects=(a,b)=>[...new Map([...(a||[]),...(b||[])].filter(x=>x&&x.id).map(x=>[x.id,x])).values()];
+  const status=t=>{const e=document.querySelector('#cloudAccountText');if(e)e.textContent=t};
+  const notify=t=>bridge?.notify(t);
+  const currentState=()=>bridge?.getState();
+  const isAuthenticated=()=>Boolean(user);
+  function setOverlay(html,wide=false){
+    if(!overlay){overlay=document.createElement('div');overlay.className='cloud-overlay';document.body.appendChild(overlay)}
+    overlay.innerHTML=`<section class="cloud-panel ${wide?'wide':''}" role="dialog" aria-modal="true" aria-label="Conta PetroPrep">${html}</section>`;
+  }
+  function closeOverlay(){overlay?.remove();overlay=null}
+  const title=(h,desc)=>`<div class="cloud-headrow"><div><h2 class="cloud-heading">${h}</h2><p class="cloud-muted">${desc}</p></div><button type="button" class="cloud-close" data-cloud="close" aria-label="Fechar">×</button></div>`;
+  const message=(msg,isError=false)=>`<p class="${isError?'cloud-error':'cloud-good'}" role="status">${escape(msg)}</p>`;
+  function showLogin(which='login',msg='',error=false){
+    const register=which==='register';
+    setOverlay(`${title(register?'Criar minha conta':'Entrar no PetroPrep','Suas respostas e aulas sincronizadas entre computador e celular.')}
+    ${msg?message(msg,error):''}
+    <div class="cloud-actions" style="margin:2px 0 18px"><button class="btn ${register?'outline':'secondary'} small" data-cloud="login-tab">Entrar</button><button class="btn ${register?'secondary':'outline'} small" data-cloud="register-tab">Cadastrar</button></div>
+    <form id="cloudAuthForm">
+      ${register?'<label class="cloud-field">Nome<input name="name" type="text" maxlength="80" autocomplete="name" placeholder="Como quer aparecer no painel" required></label>':''}
+      <label class="cloud-field">E-mail<input name="email" type="email" autocomplete="email" required placeholder="voce@exemplo.com"></label>
+      <label class="cloud-field">Senha<input name="password" type="password" minlength="6" autocomplete="${register?'new-password':'current-password'}" required placeholder="Mínimo de 6 caracteres"></label>
+      <button class="btn" type="submit" style="width:100%">${register?'Criar conta':'Entrar'} →</button>
+    </form>
+    <div class="cloud-actions"><button class="cloud-link" data-cloud="reset-password">Esqueci minha senha</button><button class="cloud-link" data-cloud="close">Continuar sem conta (salva só neste navegador)</button></div>
+    <div class="cloud-top-note">Os dados dos estudantes ficam privados. Só a conta marcada como administradora pode acompanhar os resultados das outras pessoas.</div>`);
+    overlay.querySelector('#cloudAuthForm').dataset.mode=register?'register':'login';
+  }
+  function showAccount(){
+    if(!enabled){setOverlay(`${title('Modo local','O site funciona sem banco de dados, mas não sincroniza.')}${message('Para habilitar o login, configure config.js com a URL e a chave pública do seu projeto Supabase.')}`);return}
+    if(!user){showLogin();return}
+    setOverlay(`${title('Minha conta','Sincronização com o banco de dados ativa.')}
+    <div class="cloud-badge">✓ ${escape(user.email||'Conta conectada')}</div>
+    <p class="cloud-muted" style="margin-top:15px">Cada resposta tem seu próprio registro, com data, questão e resultado. Seu painel pessoal mostra os seus dados.</p>
+    <div class="cloud-actions"><button class="btn secondary small" data-cloud="sync">Sincronizar agora</button>${admin?'<button class="btn small" data-cloud="admin">Painel de alunos ↗</button>':''}${localStorage.getItem('petroprep_estado_v1')?'<button class="btn outline small" data-cloud="import-old">Importar progresso antigo</button>':''}<button class="btn outline small" data-cloud="logout">Sair da conta</button></div>
+    <p class="cloud-top-note">O histórico não é apagado ao sair. Em um novo dispositivo, entre com a mesma conta.</p>`);
+  }
+  async function authSubmit(e){
+    e.preventDefault(); const form=e.target;const v=Object.fromEntries(new FormData(form));const btn=form.querySelector('button[type="submit"]');
+    btn.disabled=true;btn.textContent='Conectando…';
+    try{
+      if(form.dataset.mode==='register'){
+        const {data,error}=await db.auth.signUp({email:v.email.trim(),password:v.password,options:{data:{display_name:v.name.trim()},emailRedirectTo:location.origin+location.pathname}});
+        if(error)throw error;
+        if(data.session){closeOverlay();notify('Conta criada e conectada!')}
+        else showLogin('login','Cadastro recebido. Confira seu e-mail e confirme a conta antes de entrar.');
+      } else {
+        const {error}=await db.auth.signInWithPassword({email:v.email.trim(),password:v.password});
+        if(error)throw error;
+        closeOverlay();notify('Login efetuado. Carregando seu histórico…');
+      }
+    }catch(e){showLogin(form.dataset.mode==='register'?'register':'login',e.message||'Falha ao entrar.',true)}
+  }
+  async function resetPassword(){
+    const email=overlay?.querySelector('input[name="email"]')?.value.trim();
+    if(!email){showLogin('login','Digite seu e-mail no formulário e clique novamente em "Esqueci minha senha".',true);return}
+    const {error}=await db.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname});
+    showLogin('login',error?.message||'Se a conta existir, você receberá um e-mail com instruções.',Boolean(error));
+  }
+  function rowsToHistory(rows){return rows.map(x=>({id:x.question_id,attemptId:x.id,answer:x.answer,correct:x.correct,date:x.answered_at,mode:x.mode}))}
+  async function getAll(table,columns,filterUser=null){
+    const result=[];
+    for(let offset=0;offset<50000;offset+=1000){
+      let query=db.from(table).select(columns).range(offset,offset+999);
+      if(filterUser)query=query.eq('user_id',filterUser);
+      if(table==='question_attempts')query=query.order('answered_at',{ascending:true});
+      const {data,error}=await query;
+      if(error)throw error;
+      result.push(...data);
+      if(data.length<1000)break;
+    }
+    return result;
+  }
+  function mergeState(local,remote,attempts){
+    const rs=remote||{}, merged={...bridge.initial(),...local};
+    merged.read=unique([...(rs.read_topics||[]),...(local.read||[])]);
+    merged.bookmark=unique([...(rs.bookmarks||[]),...(local.bookmark||[])]);
+    merged.weeks=unique([...(rs.finished_weeks||[]),...(local.weeks||[])]);
+    merged.customTopics=mergeObjects(rs.custom_topics,local.customTopics);
+    merged.customQuestions=mergeObjects(rs.custom_questions,local.customQuestions);
+    merged.theme=remote?.theme||local.theme||'light';
+    const historyMap=new Map(rowsToHistory(attempts).map(x=>[x.attemptId,x]));
+    for(const entry of (local.history||[])){
+      if(!entry.attemptId)entry.attemptId=genId();
+      if(!historyMap.has(entry.attemptId))historyMap.set(entry.attemptId,entry);
+    }
+    merged.history=[...historyMap.values()].sort((a,b)=>String(a.date).localeCompare(String(b.date))).slice(-5000);
+    return merged;
+  }
+  async function saveSettings(){
+    if(!user)return;
+    const userId=user.id;
+    const snapshot=currentState();
+    const payload={user_id:userId,read_topics:snapshot.read,bookmarks:snapshot.bookmark,
+      finished_weeks:snapshot.weeks,custom_topics:snapshot.customTopics,
+      custom_questions:snapshot.customQuestions,theme:snapshot.theme,updated_at:new Date().toISOString()};
+    syncing=syncing.catch(()=>{}).then(async()=>{
+      if(user?.id!==userId)return;
+      const {error}=await db.from('user_settings').upsert(payload,{onConflict:'user_id'});
+      if(error)throw error;
+    });
+    try{await syncing}catch(e){notify('Alteração salva no navegador; não foi possível sincronizar as preferências.')}
+  }
+  function persist(){if(!user)return;clearTimeout(timer);timer=setTimeout(saveSettings,650)}
+  async function resetAnswers(){
+    if(!user)return;
+    const userId=user.id;
+    const {error}=await db.from('question_attempts').delete().eq('user_id',userId);
+    if(error)notify('Progresso zerado localmente, mas não foi possível apagar o histórico na nuvem: '+error.message);
+    else notify('Histórico de respostas também apagado da nuvem.');
+  }
+  async function syncAttempts(){
+    if(!user)return;
+    const userId=user.id;const all=currentState()?.history||[];
+    const batches=[];
+    for(const item of all){
+      if(!item.attemptId)continue;
+      batches.push({id:item.attemptId,user_id:userId,question_id:item.id,answer:item.answer,
+        correct:item.correct,mode:item.mode||'practice',answered_at:item.date||new Date().toISOString()});
+    }
+    for(let offset=0;offset<batches.length;offset+=200){
+      if(user?.id!==userId)return;
+      const {error}=await db.from('question_attempts').upsert(batches.slice(offset,offset+200),{onConflict:'id',ignoreDuplicates:true});
+      if(error)throw error;
+    }
+  }
+  async function trackAnswer(item){
+    if(!user)return;
+    const userId=user.id;
+    const {error}=await db.from('question_attempts').upsert({id:item.attemptId,user_id:userId,question_id:item.id,
+      answer:item.answer,correct:item.correct,mode:item.mode,answered_at:item.date},
+      {onConflict:'id',ignoreDuplicates:true});
+    if(error)notify('Resposta salva no navegador. Falha na nuvem; tente “Sincronizar agora”.');
+  }
+  async function loadSession(session){
+    const token=++initToken; clearTimeout(timer);
+    const id=session?.user?.id||null;
+    if(id===user?.id && id!==null)return;
+    if(!id){
+      user=null;admin=false;bridge.setStorageKey('petroprep_local_visitante_v2');
+      bridge.applyState(bridge.getLocalState());status('Entrar');
+      if(enabled)showLogin();return;
+    }
+    const newUser=session.user;
+    user=newUser;admin=false;status('Carregando…');
+    bridge.setStorageKey(`petroprep_user_${newUser.id}_v2`);
+    const local=bridge.getLocalState();
+    bridge.applyState(local);
+    try{
+      const name=String(newUser.user_metadata?.display_name||newUser.email?.split('@')[0]||'Estudante').slice(0,80);
+      const profilePromise=db.from('profiles').upsert({id:newUser.id,display_name:name,email:newUser.email||''},{onConflict:'id'});
+      const [s,attempts,adminR,profileR]=await Promise.all([
+        db.from('user_settings').select('*').eq('user_id',newUser.id).maybeSingle(),
+        getAll('question_attempts','id,question_id,answer,correct,mode,answered_at',newUser.id),
+        db.from('admin_users').select('user_id').eq('user_id',newUser.id).maybeSingle(),
+        profilePromise
+      ]);
+      if(token!==initToken || user?.id!==newUser.id)return;
+      if(s.error)throw s.error;
+      if(adminR.error)throw adminR.error;
+      if(profileR.error)throw profileR.error;
+      admin=Boolean(adminR.data);
+      const merged=mergeState(local,s.data,attempts);
+      bridge.applyState(merged);
+      localStorage.setItem(`petroprep_user_${newUser.id}_v2`,JSON.stringify(merged));
+      status(newUser.user_metadata?.display_name||newUser.email?.split('@')[0]||'Minha conta');
+      closeOverlay();
+      await Promise.all([saveSettings(),syncAttempts()]);
+    }catch(e){
+      if(token!==initToken)return;
+      status('Nuvem indisponível');
+      notify(`Dados locais disponíveis, mas houve erro ao sincronizar: ${e.message||'tente novamente'}`);
+    }
+  }
+  async function syncNow(){
+    if(!user)return;
+    setOverlay(`${title('Sincronização','Conferindo dados locais e da nuvem…')}<p class="cloud-muted">Processando histórico de questões.</p>`);
+    try{
+      const userId=user.id, local=currentState();
+      const [s,attempts]=await Promise.all([
+        db.from('user_settings').select('*').eq('user_id',userId).maybeSingle(),
+        getAll('question_attempts','id,question_id,answer,correct,mode,answered_at',userId)
+      ]);
+      if(s.error)throw s.error;
+      if(user?.id!==userId)return;
+      bridge.applyState(mergeState(local,s.data,attempts));
+      localStorage.setItem(`petroprep_user_${userId}_v2`,JSON.stringify(currentState()));
+      await syncAttempts();await saveSettings();
+      showAccount();notify('Sincronização concluída!');
+    }catch(e){showAccount();notify('Falha na sincronização: '+e.message)}
+  }
+  function adminSummary(){
+    const byUser=new Map();
+    for(const r of adminRows){
+      const obj=byUser.get(r.user_id)||{attempts:0,correct:0,wrong:0,last:null};
+      obj.attempts++;
+      if(r.correct===true)obj.correct++;
+      if(r.correct===false)obj.wrong++;
+      if(!obj.last||obj.last<r.answered_at)obj.last=r.answered_at;
+      byUser.set(r.user_id,obj);
+    }
+    return adminProfiles.map(p=>({profile:p,...(byUser.get(p.id)||{attempts:0,correct:0,wrong:0,last:null})}));
+  }
+  async function showAdmin(){
+    if(!user||!admin)return;
+    setOverlay(`${title('Painel dos alunos','Carregando resultados individuais…')}<p class="cloud-muted">Os dados são visíveis somente para administradores.</p>`,true);
+    try{
+      const [p,rows]=await Promise.all([
+        getAll('profiles','id,display_name,email,joined_at'),
+        getAll('question_attempts','id,user_id,question_id,answer,correct,mode,answered_at')
+      ]);
+      adminRows=rows;adminProfiles=p;
+      let people=adminSummary().sort((a,b)=>b.attempts-a.attempts);
+      setOverlay(`${title('Painel dos alunos',`${people.length} contas · ${rows.length} tentativas registradas`)}
+        <div class="cloud-scroll"><table class="cloud-table"><thead><tr><th>Aluno</th><th>Tentativas</th><th>Acertos</th><th>Erros</th><th>% de acerto</th><th>Última resposta</th></tr></thead><tbody>
+        ${people.map(p=>`<tr class="selectable" data-cloud="student" data-student="${escape(p.profile.id)}"><td><strong>${escape(p.profile.display_name)}</strong><br>${escape(p.profile.email)}</td><td>${p.attempts}</td><td>${p.correct}</td><td>${p.wrong}</td><td>${p.correct+p.wrong?Math.round(p.correct/(p.correct+p.wrong)*100):'—'}</td><td>${p.last?new Date(p.last).toLocaleDateString('pt-BR'):'—'}</td></tr>`).join('')}
+        </tbody></table></div><div class="cloud-actions"><button class="btn secondary small" data-cloud="export-csv">Exportar CSV</button><button class="btn outline small" data-cloud="account">Minha conta</button></div>`,true);
+    }catch(e){setOverlay(`${title('Painel dos alunos','Não foi possível ler os registros.')}${message(e.message,true)}<button class="btn secondary" data-cloud="account">Voltar</button>`,true)}
+  }
+  function studentDetails(id){
+    const p=adminProfiles.find(x=>x.id===id);if(!p)return;
+    const list=adminRows.filter(x=>x.user_id===id).sort((a,b)=>String(b.answered_at).localeCompare(String(a.answered_at)));
+    const contents=window.PetroPrep?.getContent().questions||[];
+    const questionMap=new Map(contents.map(x=>[x.id,x]));
+    setOverlay(`${title(escape(p.display_name),`${list.length} tentativas · ${escape(p.email)}`)}
+      <div class="cloud-scroll"><table class="cloud-table"><thead><tr><th>Quando</th><th>Matéria / questão</th><th>Resposta</th><th>Resultado</th></tr></thead><tbody>
+      ${list.slice(0,1000).map(r=>{const q=questionMap.get(r.question_id);return `<tr><td>${new Date(r.answered_at).toLocaleString('pt-BR')}</td><td><strong>${escape(r.question_id)}</strong> — ${escape(q?.text?.slice(0,90)||'Questão não disponível nesta versão')}</td><td>${r.answer===null?'Branco':r.answer?'Certo':'Errado'}</td><td class="cloud-check">${r.correct===null?'—':r.correct?'✓ Acerto':'✕ Erro'}</td></tr>`}).join('')}</tbody></table></div>
+      <p class="cloud-top-note">Exibindo até 1.000 tentativas recentes. O CSV exporta o histórico completo carregado.</p>
+      <div class="cloud-actions"><button class="btn secondary small" data-cloud="admin">← Voltar aos alunos</button></div>`,true);
+  }
+  function csvQuote(s){return '"'+String(s??'').replace(/"/g,'""')+'"'}
+  function exportCsv(){
+    const profiles=new Map(adminProfiles.map(x=>[x.id,x]));
+    const rows=[['usuario','email','questao','resposta','resultado','modalidade','data'],...adminRows.map(r=>[
+      profiles.get(r.user_id)?.display_name||'—',profiles.get(r.user_id)?.email||'—',r.question_id,
+      r.answer===null?'Branco':r.answer?'Certo':'Errado',r.correct===null?'Branco':r.correct?'Acerto':'Erro',r.mode,r.answered_at
+    ])];
+    const csv='\ufeff'+rows.map(x=>x.map(csvQuote).join(';')).join('\r\n');
+    const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));
+    const a=document.createElement('a');a.href=url;a.download='petroprep-atividade-alunos.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }
+  async function signOut(){
+    clearTimeout(timer);
+    if(user)await saveSettings();
+    const {error}=await db.auth.signOut();
+    if(error)notify(error.message);
+    else{closeOverlay();notify('Você saiu da conta. Dados preservados na nuvem.')}
+  }
+  async function importOldProgress(){
+    if(!user)return;
+    let old;try{old=JSON.parse(localStorage.getItem('petroprep_estado_v1')||'null')}catch(e){notify('Backup anterior inválido.');return}
+    if(!old||!Array.isArray(old.history)){notify('Não há progresso antigo compatível.');return}
+    if(!confirm('Importar respostas e conteúdos do PetroPrep antigo para esta conta? O histórico atual será preservado.'))return;
+    const local=currentState();
+    const unified=mergeState({...local,
+      read:unique([...(local.read||[]),...(old.read||[])]),
+      bookmark:unique([...(local.bookmark||[]),...(old.bookmark||[])]),
+      weeks:unique([...(local.weeks||[]),...(old.weeks||[])]),
+      customTopics:mergeObjects(old.customTopics,local.customTopics),
+      customQuestions:mergeObjects(old.customQuestions,local.customQuestions),
+      history:[...(local.history||[]),...old.history.map(x=>({...x,attemptId:genId()}))]
+    },null,[]);
+    bridge.applyState(unified);
+    localStorage.setItem(`petroprep_user_${user.id}_v2`,JSON.stringify(unified));
+    try{await syncAttempts();await saveSettings();showAccount();notify('Progresso antigo importado!')}catch(e){notify('Importado localmente. Tente sincronizar mais tarde.')}
+  }
+  function clickOverlay(e){
+    const button=e.target.closest('[data-cloud]');if(!button)return;
+    const act=button.dataset.cloud;
+    if(act==='close')closeOverlay();
+    if(act==='login-tab')showLogin('login');
+    if(act==='register-tab')showLogin('register');
+    if(act==='reset-password')resetPassword();
+    if(act==='logout')signOut();
+    if(act==='sync')syncNow();
+    if(act==='account')showAccount();
+    if(act==='admin')showAdmin();
+    if(act==='student')studentDetails(button.dataset.student);
+    if(act==='export-csv')exportCsv();
+    if(act==='import-old')importOldProgress();
+  }
+  function init(appBridge){
+    bridge=appBridge;
+    document.querySelector('#cloudAccount')?.addEventListener('click',showAccount);
+    document.addEventListener('click',clickOverlay);
+    document.addEventListener('submit',e=>{if(e.target.id==='cloudAuthForm')authSubmit(e)});
+    if(!enabled){status('Modo local');return}
+    if(!window.supabase?.createClient){status('Sem conexão');notify('Biblioteca de autenticação não carregou. Verifique sua internet.');return}
+    db=window.supabase.createClient(cfg.url.replace(/\/$/,''),cfg.publishableKey);
+    bridge.setStorageKey('petroprep_local_visitante_v2');
+    bridge.applyState(bridge.getLocalState());
+    status('Entrar');
+    db.auth.onAuthStateChange((event,session)=>{
+      if(['INITIAL_SESSION','SIGNED_IN','SIGNED_OUT'].includes(event))setTimeout(()=>loadSession(session),0);
+    });
+    db.auth.getSession().then(({data,error})=>{
+      if(error){notify('Não foi possível recuperar a sessão.');showLogin()}
+      else loadSession(data.session);
+    });
+    window.addEventListener('online',()=>{if(user){syncAttempts().then(()=>saveSettings()).catch(()=>{});}});
+  }
+  window.PetroCloud={init,isAuthenticated,persist,trackAnswer,resetAnswers,showAccount};
+})();
+
+</script>
+<script>
+/* PetroPrep — frontend com sincronização opcional via Supabase.
+   Conteúdos-base em conteudo.js, dados individuais em PostgreSQL com RLS. */
+(() => {
+'use strict';
+const BASE = window.PETRO_DATA;
+if (!BASE) { document.querySelector('#main').textContent = 'Não foi possível carregar conteudo.js. Abra o index.html junto dos demais arquivos.'; return; }
+const KEY = 'petroprep_estado_v1';
+let storageKey=KEY;
+const initial = {read:[],bookmark:[],weeks:[],history:[],customTopics:[],customQuestions:[],theme:'light'};
+function loadState(){try{const x=JSON.parse(localStorage.getItem(storageKey)||'{}');return {...initial,...x}}catch(_){return {...initial}}}
+let state=loadState(), current='dashboard', activeTopic=null, activeBlock='TODOS', searchText='', qTopic='TODOS', qDifficulty='TODOS', quiz=null, toastTimeout=null;
+const main = document.getElementById('main');
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const attr=esc;
+const save=()=>{try{localStorage.setItem(storageKey,JSON.stringify(state))}catch(_){toast('Armazenamento local cheio. Exporte seu progresso para fazer uma cópia.')} window.PetroCloud?.persist(state)};
+const topics=()=>[...BASE.topics,...state.customTopics];
+const questions=()=>[...BASE.questions,...state.customQuestions];
+const topicById=id=>topics().find(x=>x.id===id);
+const questionTopic=(id)=>topicById(id)?.title || 'Matéria personalizada';
+const blockLabel=b=>b==='BÁSICOS'?'Conhecimentos básicos':`Bloco ${b}`;
+const topicQuestions=id=>questions().filter(x=>x.topic===id);
+const lastAnswers=()=>{const a={};state.history.forEach(x=>{if(x.answer!==null)a[x.id]=x});return a};
+const wrong=()=>{const a=lastAnswers();return questions().filter(q=>a[q.id]&&!a[q.id].correct)};
+const answered=()=>state.history.filter(x=>x.answer!==null);
+const accuracy=()=>{const a=answered();return a.length? Math.round(100*a.filter(x=>x.correct).length/a.length):0};
+const examScore=arr=>arr.reduce((sum,x)=>sum+(x.answer===null?0:x.correct?1:-1),0);
+const topicStudied=id=>state.read.includes(id) || !!state.history.find(x=>questions().find(q=>q.id===x.id)?.topic===id);
+const covered=()=>topics().filter(x=>topicStudied(x.id)).length;
+const escapeContent=x=>esc(x).replace(/\n/g,'<br>');
+const getWeekNumber=()=>{let day=new Date(), anchor=new Date(2026,10,16), n=Math.floor((new Date(day.getFullYear(),day.getMonth(),day.getDate())-anchor)/604800000)+1;return Math.min(12,Math.max(1,n))};
+function toast(msg){let x=$('.toast');if(x)x.remove();x=document.createElement('div');x.className='toast';x.textContent=msg;document.body.append(x);clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>x.remove(),3000)}
+function setTheme(){document.body.classList.toggle('dark',state.theme==='dark');const t=$('#themeToggle');if(t)t.textContent=state.theme==='dark'?'☼':'◐'}
+function nav(view,topic){current=view;if(topic)activeTopic=topic;window.scrollTo({top:0,behavior:'instant'});document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===current));$('#sidebar').classList.remove('open');$('#mobileoverlay').classList.remove('show');render()}
+function header(label,title,desc,aside=''){return `<div class="pagehead"><div><div class="eyebrow">${esc(label)}</div><h1 class="pageheading">${esc(title)}</h1><p class="subtitle">${esc(desc)}</p></div>${aside}</div>`}
+function footer(){return `<div class="footerline">PetroPrep é um projeto de estudos independente, não afiliado à Petrobras ou ao Cebraspe. Conteúdo baseado no edital de 2021/2022; questões autorais. ${window.PetroCloud?.isAuthenticated()?'Seu progresso é sincronizado na nuvem.':'Seu progresso fica salvo neste navegador enquanto você não conectar uma conta.'} <a href="${attr(BASE.links.edital)}" target="_blank" rel="noopener noreferrer">Consultar edital oficial ↗</a></div>`}
+function render(){
+ const titles={dashboard:'Seu painel de aprendizagem',trilhas:'Matérias e aulas',lesson:'Aula e conteúdo',questoes:'Banco de questões',simulados:'Simulados',erros:'Caderno de erros',plano:'Plano de estudos',biblioteca:'Biblioteca',gerenciar:'Personalizar conteúdo',quiz:'Sessão de questões',resultados:'Resultado'};
+ $('#breadcrumb').textContent=titles[current]||'PetroPrep';
+ const views={dashboard:dashboard,trilhas:trilhas,lesson:lesson,questoes:questoes,simulados:simulados,erros:erros,plano:plano,biblioteca:biblioteca,gerenciar:gerenciar,quiz:quizView,resultados:resultsView};
+ main.innerHTML=(views[current]||dashboard)()+footer();
+ setTheme();
+}
+function dashboard(){
+ const ac=accuracy(), tot=topics().length, done=covered(), numQ=questions().length;
+ const nWeek=BASE.weeks[getWeekNumber()-1], recommended=(nWeek?.topics||[]).map(topicById).filter(Boolean).slice(0,3);
+ if(!recommended.length)recommended.push(...topics().slice(0,3));
+ return `<div class="hero"><div class="heroinside"><div class="herotag">✦ SEU ESPAÇO DE PREPARAÇÃO</div><h1>Seu próximo passo rumo à Petrobras começa aqui.</h1><p>Estude os tópicos do edital, pratique Certo ou Errado e transforme cada erro em aprendizado.</p><div class="herobuttons"><button class="btn" data-action="start-quick">▶ &nbsp;Praticar agora</button><button class="btn ghostwhite" data-view="trilhas">Explorar matérias ↗</button></div></div></div>
+ <div class="stats">
+ <div class="stat"><div class="stat-head">Questões resolvidas <span class="stat-icon">◎</span></div><div class="statvalue">${answered().length}</div><div class="statfoot">${numQ} questões no banco</div></div>
+ <div class="stat"><div class="stat-head">Taxa de acerto <span class="stat-icon">◈</span></div><div class="statvalue">${ac}%</div><div class="statfoot">Respostas de todas as sessões</div></div>
+ <div class="stat"><div class="stat-head">Matérias iniciadas <span class="stat-icon">▤</span></div><div class="statvalue">${done}<span style="font-size:15px;color:var(--muted)">/${tot}</span></div><div class="statfoot">Pelo menos uma aula ou questão</div></div>
+ <div class="stat"><div class="stat-head">Pontuação líquida <span class="stat-icon">✳</span></div><div class="statvalue">${examScore(state.history)}</div><div class="statfoot">+1 acerto · −1 erro · 0 branco</div></div>
+ </div>
+ <div class="secrow"><h2 class="sectitle">Seu caminho de estudos</h2><button class="textlink" data-view="plano">Ver planejamento →</button></div>
+ <div class="columns"><section class="panel"><div class="panelhead"><h3>Matérias para começar</h3><span class="chip">Semana ${getWeekNumber()}</span></div>${recommended.map(t=>`<div class="courseitem" data-action="open-topic" data-id="${attr(t.id)}"><div class="courseicon">${iconFor(t.block)}</div><div style="flex:1;min-width:0"><div class="ctitle">${esc(t.title)}</div><div class="cmeta">${esc(blockLabel(t.block))} · ${topicQuestions(t.id).length} questões</div></div><span class="arrow">↗</span></div>`).join('')}<div class="weekline"><div class="lab">No seu cronograma</div><strong>${esc(nWeek?.title||'Revisão geral')}</strong><p>${esc(nWeek?.range||'')}. Adapte livremente à sua rotina da faculdade.</p></div></section>
+ <section class="panel"><div class="panelhead"><h3>Cobertura do edital</h3><span class="chip">${done} de ${tot}</span></div><div class="donut" style="--percent:${tot?Math.round(done/tot*100):0}%"><div class="donutinner"><strong>${tot?Math.round(done/tot*100):0}%</strong><small>explorado</small></div></div><div class="legend"><span>Conhecimentos básicos</span><strong>${topics().filter(t=>t.block==='BÁSICOS'&&topicStudied(t.id)).length}/${topics().filter(t=>t.block==='BÁSICOS').length}</strong></div><div class="legend"><span>Blocos específicos</span><strong>${topics().filter(t=>t.block!=='BÁSICOS'&&topicStudied(t.id)).length}/${topics().filter(t=>t.block!=='BÁSICOS').length}</strong></div><div class="progressbar"><div class="progressfill" style="width:${tot?Math.round(done/tot*100):0}%"></div></div><button class="btn secondary" style="width:100%;margin-top:19px" data-view="trilhas">Continuar estudando →</button></section></div>
+ <div class="secrow"><h2 class="sectitle">Como você quer estudar hoje?</h2></div><div class="actioncards"><button class="actioncard" data-view="trilhas"><span class="bigemoji">📖</span><strong>Aprender uma matéria</strong><p>Resumos, fórmulas, exemplos e bibliografia técnica.</p></button><button class="actioncard" data-view="questoes"><span class="bigemoji">🎯</span><strong>Resolver questões</strong><p>Treino por tópico com correção e justificativa.</p></button><button class="actioncard" data-view="simulados"><span class="bigemoji">⏱</span><strong>Fazer simulado</strong><p>Questões misturadas, pontuação líquida e resultado.</p></button></div>`}
+function iconFor(block){return {'I':'∑','II':'⚙','III':'◈','BÁSICOS':'Aa'}[block]||'✦'}
+function trilhas(){const ss=searchText.toLowerCase();const filtered=topics().filter(t=>(activeBlock==='TODOS'||t.block===activeBlock)&&(`${t.title} ${t.summary}`.toLowerCase().includes(ss)));
+ return header('Conteúdo programático','Matérias e aulas',`${topics().length} módulos organizados por blocos conforme o edital de Engenharia de Petróleo.`) + `<div class="filters"><label class="searchbox">⌕ <input id="topicSearch" placeholder="Buscar uma matéria ou assunto..." value="${attr(searchText)}" aria-label="Buscar matéria"/></label></div><div class="tabs">${[['TODOS','Todas'],['I','Bloco I'],['II','Bloco II'],['III','Bloco III'],['BÁSICOS','Português e Inglês']].map(([b,l])=>`<button class="tab ${activeBlock===b?'active':''}" data-action="filter-block" data-block="${b}">${l}</button>`).join('')}</div><div class="topics" id="topicsList">${topicCards(filtered)}</div>`;}
+function topicCards(filtered){return filtered.length?filtered.map(t=>`<button class="topiccard" data-action="open-topic" data-id="${attr(t.id)}"><span class="topicbadge ${topicStudied(t.id)?'green':''}">${topicStudied(t.id)?'✓ INICIADO':esc(blockLabel(t.block).toUpperCase())}</span><h3>${esc(t.title)}</h3><p>${esc(t.summary).slice(0,150)}${t.summary.length>150?'…':''}</p><div class="topicfooter"><span>${topicQuestions(t.id).length} questões disponíveis</span><b>Estudar ↗</b></div></button>`).join(''):`<div class="empty" style="grid-column:1/-1">⌕<strong>Nenhuma matéria encontrada</strong><p>Tente outra palavra ou bloco.</p></div>`}
+const EXTRA={
+ fluidos:['Comece identificando se o fluido é compressível, se o regime é permanente e qual é o volume de controle. Essas hipóteses determinam quais equações são válidas.','Em continuidade para regime permanente: vazão mássica de entrada = vazão mássica de saída, na ausência de acúmulo. Em fluidos incompressíveis e um único tubo, A·V permanece constante.','Em Bernoulli, não esqueça: a forma idealizada relaciona pressão, velocidade e cota; máquinas e atrito exigem termos adicionais na equação de energia.'],
+ termo:['Funções de estado, como U, H e S, independem do caminho. Calor e trabalho dependem da trajetória. Em ciclos, ΔU=0 e ΔS do sistema=0, mas isso não significa ausência de irreversibilidades.','Para resolver questões, declare o sistema, a convenção de sinais, os processos e as hipóteses; só depois escreva a primeira lei.','Na segunda lei, observe diferenças entre entropia do sistema e geração de entropia: S_gerada≥0 para processos reais.'],
+ calor:['Condução: transporte associado ao gradiente térmico; modelo elementar de parede plana em regime permanente leva a q̇=kAΔT/L.','Convecção: envolve troca térmica entre superfície e fluido; q̇=hA(T_s−T∞).','Radiação: a dependência com a temperatura absoluta é da quarta potência, não linear.'],
+ geo:['Sistema petrolífero convencional envolve geração e expulsão de hidrocarbonetos, migração, acumulação em rocha reservatório e retenção por selo e armadilha.','As propriedades petrofísicas da rocha não são inferidas diretamente de uma “foto” do subsolo. Geofísica mede respostas a estímulos; interpretações combinam geologia e dados de poços.','Na reflexão sísmica vertical simplificada, o tempo de ida e volta é t≈2z/v. Se a velocidade não é constante, a relação exige tratamento mais cuidadoso.'],
+ perfuracao:['A lama circula por meio de bombas e remove cascalhos, ajuda no controle de pressão e influencia a estabilidade do poço.','A pressão hidrostática depende da densidade do fluido e da profundidade vertical (não simplesmente do comprimento da trajetória inclinada).','Perfuração direcional inclui trajetórias desviadas e horizontais; não é sinônimo de perfuração horizontal.'],
+ reservatorios:['Porosidade representa espaço vazio relativo; permeabilidade representa facilidade de passagem do fluido. São propriedades diferentes.','A lei de Darcy é uma relação básica entre vazão, diferença de pressão, permeabilidade, geometria e viscosidade para condições de fluxo adequadas.','Testes de pressão ajudam a inferir propriedades do sistema poço-reservatório a partir da resposta de pressão e vazão.'],
+ prob:['Para eventos independentes, P(A∩B)=P(A)P(B). Não assuma independência só porque dois eventos aparecem no enunciado.','A probabilidade condicional P(A|B) usa o universo restrito em que B ocorre; o denominador é P(B).','Use o teorema de Bayes quando o enunciado apresenta uma evidência e solicita a probabilidade de uma causa.'],
+ resistencia:['Desenhe todas as forças, reações e seções de interesse antes de escrever as equações.','Tensão média axial N/A é válida como descrição simplificada de uma barra sob esforço axial; detalhes locais e concentrações de tensão exigem modelos adicionais.','A lei de Hooke vale no trecho linear elástico. Plásticos e estados multiaxiais demandam modelos mais elaborados.'],
+ portugues:['Em Cebraspe, observe palavras restritivas: “sempre”, “somente”, “necessariamente” e “todos”. Elas podem tornar a afirmação incorreta.','Em interpretação, não confunda informação explicitamente dita, inferência lógica e opinião externa.','Na reescrita, analise simultaneamente correção gramatical e manutenção de sentido.'],
+ ingles:['Leia a pergunta antes do texto, identifique palavras-chave e procure conectivos que mudam a relação lógica entre orações.','Although, even though e despite sinalizam concessão; therefore indica consequência; however indica contraste.','Uma questão de compreensão pode exigir inferência, sem tradução palavra por palavra.']
+};
+function lesson(){let t=topicById(activeTopic)||topics()[0];if(!t)return '<p>Sem conteúdos disponíveis.</p>';activeTopic=t.id;
+ const marked=state.read.includes(t.id), qs=topicQuestions(t.id), extr=EXTRA[t.id]||[];
+ return `<div class="pagehead"><div><button class="textlink" data-view="trilhas">← Voltar para matérias</button><div class="eyebrow">${esc(blockLabel(t.block))} · Aula de revisão</div><h1 class="pageheading">${esc(t.title)}</h1><p class="subtitle">Resumo autoral alinhado aos tópicos do edital • Referências para aprofundar</p></div><button class="btn ${marked?'secondary':''}" data-action="mark-read" data-id="${attr(t.id)}">${marked?'✓ Aula marcada como estudada':'✓ Marcar aula como estudada'}</button></div>
+ <div class="lessonlayout"><article class="lessonbody"><h2>O que você precisa dominar</h2><p>${esc(t.summary)}</p>${extr.length?`<h2>Raciocínio para a prova</h2><ol class="lessonextra">${extr.map(v=>`<li>${esc(v)}</li>`).join('')}</ol>`:''}<h2>Fórmulas e relações essenciais</h2><div class="formula">${esc(t.formula)}</div><h2>Exemplo resolvido</h2><div class="example"><strong>Aplicação direta</strong><br>${esc(t.example)}</div><h2>Checklist de domínio</h2><ul class="lessonextra"><li>Sei explicar os termos e as hipóteses sem consultar anotações.</li><li>Consigo aplicar as relações em um exercício numérico simples.</li><li>Sei identificar afirmações incorretas em itens Certo ou Errado.</li></ul><div class="divider"></div><button class="btn" data-action="practice-topic" data-id="${attr(t.id)}" ${!qs.length?'disabled':''}>Responder ${qs.length} questões desta aula →</button></article>
+ <aside class="lessonaside"><div class="panel"><h3 style="margin-bottom:10px">Seu progresso</h3><div class="weekline"><div class="lab">Nesta matéria</div><strong>${qs.length} questões</strong><p>${marked?'Aula marcada como estudada':'Ainda não marcada como estudada'}</p></div><h3 style="margin:18px 0 9px">Para aprofundar</h3>${(t.links||[]).map(k=>`<a class="resourcelink" href="${attr(BASE.links[k]||k)}" target="_blank" rel="noopener noreferrer">▧ ${esc(resourceName(k))} ↗</a>`).join('')}<p class="smallmuted" style="line-height:1.7;margin-top:15px">As explicações são resumos originais. Os links levam a livros, cursos ou referências externas; não reproduzimos o texto integral das obras.</p></div></aside></div>`}
+function resourceName(key){return {univesp:'UNIVESP',khan:'Khan Academy',mit:'MIT OpenCourseWare',openstax:'OpenStax',bpg:'AAPG — Petroleum Systems',up:'Universidade Petrobras',perfuracao:'Livro: Perfuração Direcional',pressao:'Livro: Testes de Pressão',portugues:'Gramática e português',british:'British Council',ingles:'Inglês — British Council',stat:'Estatística — Khan Academy'}[key]||key}
+function questoes(){const tOpts=topics().map(t=>`<option value="${attr(t.id)}" ${qTopic===t.id?'selected':''}>${esc(t.title)}</option>`).join('');const c=questions().filter(q=>(qTopic==='TODOS'||q.topic===qTopic)&&(qDifficulty==='TODOS'||String(q.difficulty)===String(qDifficulty)));
+ return header('Prática ativa','Banco de questões',`${questions().length} questões autorais com correção comentada, no formato Certo ou Errado.`, `<button class="btn" data-action="start-filtered">▶ Começar treino (${Math.min(c.length,10)})</button>`)+`<div class="notice">✦ Cada questão inclui justificativa. Este banco é <strong>autoral</strong>, não composto por questões oficiais. Para questões reais, use o link na Biblioteca.</div><div class="filters"><select id="qTopic" class="select" style="flex:1;max-width:360px"><option value="TODOS">Todas as matérias</option>${tOpts}</select><select id="qDifficulty" class="select"><option value="TODOS">Todas as dificuldades</option><option value="1" ${qDifficulty==='1'?'selected':''}>Fácil</option><option value="2" ${qDifficulty==='2'?'selected':''}>Intermediária</option><option value="3" ${qDifficulty==='3'?'selected':''}>Avançada</option></select></div><section class="panel"><div class="panelhead"><h3>Questões disponíveis</h3><span class="chip" id="qCount">${c.length} resultados</span></div><div class="tablewrap"><table class="table"><thead><tr><th>Código</th><th>Matéria</th><th>Enunciado</th><th>Dificuldade</th></tr></thead><tbody id="qRows">${questionRows(c)}</tbody></table></div></section>`}
+function questionRows(list){return list.slice(0,100).map(q=>`<tr class="clickable" data-action="start-single" data-id="${attr(q.id)}"><td><strong>${esc(q.id)}</strong></td><td>${esc(questionTopic(q.topic))}</td><td>${esc(q.text).slice(0,105)}${q.text.length>105?'…':''}</td><td><span class="chip">${['','Fácil','Média','Difícil'][q.difficulty]||'Média'}</span></td></tr>`).join('')||'<tr><td colspan="4">Sem questões com esses filtros.</td></tr>'}
+function simulados(){return header('Treino cronometrado','Simulados','Misture diferentes matérias e acompanhe sua pontuação com a regra +1 / −1 / 0.')+`<div class="columns"><section class="panel"><div class="panelhead"><h3>Configure seu treino</h3><span class="topicbadge">FORMATO CERTO / ERRADO</span></div><p class="smallmuted" style="line-height:1.8">Os itens são apresentados sem feedback até o final, como em uma prova. Escolha a duração:</p><div class="numberselect" id="quizCounts"><button class="numchip selected" data-action="pick-count" data-count="10">10 itens</button><button class="numchip" data-action="pick-count" data-count="20">20 itens</button><button class="numchip" data-action="pick-count" data-count="40">40 itens</button></div><div class="weekline"><strong>Avaliação reduzida e mista</strong><p>Não reproduz a proporção de 30/20/70 itens nem a dificuldade exata da prova oficial de 2022.</p></div><button class="btn" data-action="start-mock" style="width:100%">Iniciar simulado →</button></section><section class="panel"><h3>Como funciona a correção</h3><div style="display:grid;gap:13px;margin-top:20px"><div class="courseitem"><div class="courseicon" style="background:var(--greenlight);color:var(--green)">+1</div><div><div class="ctitle">Resposta correta</div><div class="cmeta">Soma um ponto líquido.</div></div></div><div class="courseitem"><div class="courseicon" style="background:var(--redlight);color:var(--red)">−1</div><div><div class="ctitle">Resposta incorreta</div><div class="cmeta">Retira um ponto líquido.</div></div></div><div class="courseitem"><div class="courseicon">0</div><div><div class="ctitle">Em branco</div><div class="cmeta">Não altera a pontuação.</div></div></div></div><div class="notice warn">A regra corresponde ao edital de 2021/2022. Um edital futuro pode estabelecer outro sistema.</div></section></div>`}
+function erros(){const list=wrong();return header('Aprenda com os erros','Caderno de erros','Questões cuja resposta mais recente foi incorreta.',`<button class="btn" data-action="start-wrong" ${list.length?'':'disabled'}>Revisar meus erros (${list.length}) →</button>`)+(list.length?`<section class="panel"><div class="tablewrap"><table class="table"><thead><tr><th>Questão</th><th>Matéria</th><th>Enunciado</th><th>Ação</th></tr></thead><tbody>${list.map(q=>`<tr><td><b>${esc(q.id)}</b></td><td>${esc(questionTopic(q.topic))}</td><td>${esc(q.text).slice(0,115)}</td><td><button class="textlink" data-action="start-single" data-id="${attr(q.id)}">Refazer ↗</button></td></tr>`).join('')}</tbody></table></div></section>`:`<div class="empty">✎<strong>Seu caderno está vazio</strong><p>Quando você errar uma questão, ela aparecerá aqui para revisão. Ao acertá-la, sairá da lista de erros atuais.</p><button class="btn" data-action="start-quick">Começar a resolver questões</button></div>`)}
+function plano(){const total=BASE.weeks.length;const done=state.weeks.length;return header('Organização','Plano de 12 semanas','Roteiro inicial sugerido, de 16/11/2026 a 07/02/2027. Ajuste a carga à sua rotina.')+`<div class="panel"><div class="panelhead"><h3>Etapas do cronograma</h3><span class="chip">${done}/${total} concluídas</span></div><div class="progressbar"><div class="progressfill" style="width:${Math.round(done/total*100)}%"></div></div>${BASE.weeks.map(w=>`<div class="weekitem"><div class="weeknum">${w.number}</div><div style="flex:1"><h4>${esc(w.title)}</h4><p>${esc(w.range)} · ${w.topics.map(id=>esc(questionTopic(id))).join(' • ')}</p><div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:10px">${w.topics.slice(0,4).map(id=>`<button class="textlink" style="padding:0;font-size:10px" data-action="open-topic" data-id="${attr(id)}">${esc(questionTopic(id))} ↗</button>`).join('')}</div></div><label style="font-size:11px;color:var(--muted);display:flex;align-items:center;gap:7px;white-space:nowrap"><input type="checkbox" data-action="week" data-week="${w.number}" ${state.weeks.includes(w.number)?'checked':''}/> Feita</label></div>`).join('')}</div>`}
+function biblioteca(){return header('Materiais e referências','Biblioteca de estudos','Fontes confiáveis para aprofundar as aulas e acessar provas reais.')+`<div class="notice">Os links externos podem ter modalidades de acesso diferentes. Os resumos e questões do portal foram produzidos especificamente para este projeto; não são transcrições de livros.</div><div class="resourcecards">${BASE.resources.map((r,i)=>`<a class="resourcecard" target="_blank" rel="noopener noreferrer" href="${attr(BASE.links[r.link]||r.link)}"><span>${['📋','📝','📚','📗','🛢','🌍','🎓','📐','⚗️','🔬','🌐'][i%11]}</span><div><strong>${esc(r.title)} ↗</strong><p>${esc(r.description)}</p></div></a>`).join('')}</div>`}
+function gerenciar(){return header('Personalização','Gerenciar conteúdo','Adicione questões e matérias, importe pacotes novos e exporte seu progresso para outro dispositivo.')+`<div class="notice">Tudo funciona sem conta e sem servidor. Suas questões adicionadas pelo formulário ficam <b>apenas neste navegador</b>. Para publicar mudanças no site hospedado, exporte o pacote ou edite <code>conteudo.js</code>.</div>
+ <div class="columns"><section class="panel"><div class="panelhead"><h3>Adicionar uma questão</h3><span class="chip">Certo / Errado</span></div><form id="addQuestion"><div class="field"><label for="formTopic">Matéria</label><select id="formTopic" name="topic" required>${topics().map(t=>`<option value="${attr(t.id)}">${esc(t.title)}</option>`).join('')}</select></div><div class="field"><label for="formText">Enunciado</label><textarea id="formText" name="text" minlength="10" maxlength="1000" placeholder="Ex.: Para escoamento incompressível..." required></textarea></div><div class="formrow"><div class="field"><label for="formAnswer">Gabarito</label><select id="formAnswer" name="answer"><option value="true">Certo</option><option value="false">Errado</option></select></div><div class="field"><label for="formDiff">Nível</label><select id="formDiff" name="difficulty"><option value="1">Básico</option><option value="2" selected>Intermediário</option><option value="3">Avançado</option></select></div></div><div class="field"><label for="formExplain">Explicação / resolução</label><textarea id="formExplain" name="explanation" minlength="8" maxlength="2000" placeholder="Explique o raciocínio e a fórmula..." required></textarea></div><button class="btn" type="submit" style="width:100%">+ Salvar questão</button></form></section>
+ <div style="display:grid;gap:17px;align-content:start"><section class="panel"><h3>Adicionar uma matéria</h3><form id="addTopic" style="margin-top:15px"><div class="field"><label>Título da matéria</label><input name="title" required minlength="3" placeholder="Ex.: Análise dimensional avançada"/></div><div class="field"><label>Bloco</label><select name="block"><option value="I">Bloco I</option><option value="II">Bloco II</option><option value="III">Bloco III</option><option value="BÁSICOS">Conhecimentos básicos</option></select></div><div class="field"><label>Resumo / teoria</label><textarea name="summary" required minlength="20" placeholder="Descrição do conteúdo..."></textarea></div><div class="field"><label>Fórmula principal (opcional)</label><input name="formula" placeholder="Ex.: Re = ρVD/μ"/></div><div class="field"><label>Exemplo resolvido (opcional)</label><textarea name="example" placeholder="Enunciado e resolução..."></textarea></div><button class="btn secondary" type="submit" style="width:100%">+ Criar matéria</button></form></section></div></div>
+ <div class="secrow"><h2 class="sectitle">Importar, exportar e backup</h2></div><div class="columns"><section class="panel"><h3>Banco de conteúdo</h3><p class="smallmuted" style="line-height:1.7">Importe um arquivo JSON com <code>topics</code> e <code>questions</code>. Novas questões com IDs inéditos serão acrescentadas.</p><input class="hidden" type="file" id="importContentFile" accept=".json,application/json"/><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn secondary small" data-action="import-content">Importar JSON</button><button class="btn outline small" data-action="export-content">Exportar meu conteúdo</button><button class="btn outline small" data-action="export-all">Exportar banco completo</button></div></section>
+ <section class="panel"><h3>Seu progresso</h3><p class="smallmuted" style="line-height:1.7">Leve as respostas, matérias estudadas e personalizações para outro navegador. Faça backup antes de limpar dados do navegador.</p><input class="hidden" type="file" id="importBackupFile" accept=".json,application/json"/><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn secondary small" data-action="export-backup">Salvar backup</button><button class="btn outline small" data-action="import-backup">Restaurar backup</button><button class="btn outline small" data-action="reset-progress">Zerar progresso</button></div></section></div>
+ ${state.customQuestions.length||state.customTopics.length?`<div class="secrow"><h2 class="sectitle">Personalizações salvas</h2></div><section class="panel"><p class="smallmuted">${state.customTopics.length} matérias e ${state.customQuestions.length} questões personalizadas.</p><div class="tablewrap"><table class="table"><tbody>${state.customQuestions.map(q=>`<tr><td>${esc(q.id)}</td><td>${esc(questionTopic(q.topic))}</td><td>${esc(q.text).slice(0,90)}</td><td><button class="textlink" data-action="delete-custom" data-id="${attr(q.id)}">Excluir</button></td></tr>`).join('')}</tbody></table></div></section>`:''}`}
+function startSession(opts){const source=opts?.source||'all';let pool=source==='errors'?wrong():source==='saved'?questions().filter(q=>state.bookmark.includes(q.id)):questions();if(opts?.topic)pool=pool.filter(q=>q.topic===opts.topic);if(opts?.difficulty)pool=pool.filter(q=>String(q.difficulty)===String(opts.difficulty));if(opts?.single)pool=pool.filter(q=>q.id===opts.single);if(!pool.length){toast('Não há questões disponíveis com esse filtro.');return}
+ const items=[...pool].sort(()=>Math.random()-.5).slice(0,opts?.count||pool.length);
+ quiz={items,idx:0,answers:[],mode:opts?.mode||'practice',chosen:undefined,startedAt:Date.now()};nav('quiz');}
+function currentQuestion(){return quiz?.items?.[quiz.idx]}
+function quizView(){if(!quiz)return `<div class="empty">Sem sessão ativa. <button class="btn" data-view="questoes">Voltar ao banco</button></div>`;
+ const q=currentQuestion();if(!q)return '<p>Sem questão.</p>';const resp=quiz.chosen, revealed=resp!==undefined && quiz.mode!=='mock', isCorrect=resp===q.answer;
+ const chosenText=resp===null?'Em branco':resp===true?'Certo':'Errado';
+ return `<div class="quizwrap"><div class="quiztop"><div><div class="eyebrow">${quiz.mode==='mock'?'SIMULADO':'TREINO COMENTADO'}</div><h1 class="pageheading" style="font-size:24px;margin:5px 0">Questão ${quiz.idx+1} de ${quiz.items.length}</h1></div><button class="btn secondary small" data-action="end-quiz">Encerrar sessão ✕</button></div><div class="quizprogress"><div style="width:${Math.round(quiz.idx/quiz.items.length*100)}%"></div></div><div class="qcard"><div class="qmeta"><span><span class="topicbadge">${esc(questionTopic(q.topic))}</span> <span class="chip">${['','Básica','Intermediária','Avançada'][q.difficulty]||'Intermediária'}</span></span><span>${esc(q.id)} · ${quiz.mode==='mock'?'Sem feedback imediato':'Autoral'}</span></div><div class="qtext">${esc(q.text)}</div><div class="choices"><button class="choice ${revealed?(q.answer===true?'correct':(resp===true?'wrong':'')):''}" data-action="answer" data-value="true" ${resp!==undefined?'disabled':''}>✓ &nbsp; Certo</button><button class="choice ${revealed?(q.answer===false?'correct':(resp===false?'wrong':'')):''}" data-action="answer" data-value="false" ${resp!==undefined?'disabled':''}>✕ &nbsp; Errado</button></div>
+ ${revealed?`<div class="feedback ${resp===null||isCorrect?'':'bad'}"><strong>${resp===null?'⚪ Você deixou em branco':isCorrect?'✓ Resposta correta':'✕ Resposta incorreta'} · Gabarito: ${q.answer?'Certo':'Errado'}</strong><p>${esc(q.explanation)}</p></div>`:''}
+ <div class="qfooter"><div style="display:flex;gap:8px"><button class="btn secondary small" data-action="bookmark" data-id="${attr(q.id)}">${state.bookmark.includes(q.id)?'★ Favorita':'☆ Favoritar'}</button></div><div style="display:flex;gap:9px">${resp===undefined?`<button class="btn outline small" data-action="skip">Deixar em branco</button>`:`<button class="btn small" data-action="next-question">${quiz.idx===quiz.items.length-1?'Ver resultado →':'Próxima questão →'}</button>`}</div></div></div><p class="center smallmuted" style="margin-top:18px">${quiz.mode==='mock'?'No simulado, o gabarito aparece somente no final.':(window.PetroCloud?.isAuthenticated()?'As respostas são salvas automaticamente na sua conta.':'As respostas são salvas automaticamente neste navegador.')}}</p></div>`}
+function answerQuiz(val){if(!quiz||quiz.chosen!==undefined)return;quiz.chosen=val;const q=currentQuestion();const correct=val===null?null:val===q.answer;const item={id:q.id,attemptId:window.crypto?.randomUUID?.()||'00000000-0000-4000-8000-'+Math.random().toString(16).slice(2).padEnd(12,'0').slice(0,12),answer:val,correct,date:new Date().toISOString(),mode:quiz.mode};quiz.answers.push(item);state.history.push(item);if(state.history.length>5000)state.history=state.history.slice(-5000);save();window.PetroCloud?.trackAnswer(item);if(quiz.mode==='mock'){nextQuestion()}else render()}
+function nextQuestion(){if(!quiz)return;quiz.idx++;quiz.chosen=undefined;if(quiz.idx>=quiz.items.length)nav('resultados');else render()}
+function resultsView(){if(!quiz)return '<p>Não há resultado salvo da sessão atual.</p>';const list=quiz.answers, ac=list.filter(a=>a.correct===true).length, err=list.filter(a=>a.correct===false).length, blank=list.filter(a=>a.answer===null).length, net=ac-err, rate=ac+err?Math.round(100*ac/(ac+err)):0;
+ return `<div class="results"><div class="eyebrow">SESSÃO FINALIZADA</div><h1 class="pageheading">Seu resultado está pronto ✦</h1><p class="subtitle">Continue praticando e revise as justificativas abaixo.</p><div class="resultnumber">${net>0?'+':''}${net} <span style="font-size:15px;color:var(--muted)">pontos líquidos</span></div><div class="resultgrid"><div class="resulttile"><strong style="color:var(--green)">${ac}</strong><span>Acertos</span></div><div class="resulttile"><strong style="color:var(--red)">${err}</strong><span>Erros</span></div><div class="resulttile"><strong>${blank}</strong><span>Em branco</span></div></div><p class="smallmuted">Taxa de acerto entre itens respondidos: <strong>${rate}%</strong> · duração aproximada: ${Math.max(1,Math.ceil((Date.now()-quiz.startedAt)/60000))} min</p><div style="display:flex;gap:10px;justify-content:center;margin:23px 0;flex-wrap:wrap"><button class="btn" data-action="start-quick">Novo treino ↗</button><button class="btn secondary" data-view="erros">Caderno de erros</button></div><section class="panel" style="text-align:left"><h3>Correção da sessão</h3>${list.map((r,i)=>{const q=questions().find(x=>x.id===r.id);return !q?'':`<div style="padding:16px 0;border-bottom:1px solid var(--border)"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><b style="font-size:12px">${i+1}. ${esc(questionTopic(q.topic))}</b><span class="chip ${r.answer===null?'':r.correct?'ok':'bad'}">${r.answer===null?'Branco':r.correct?'✓ Acerto':'✕ Erro'}</span></div><p class="small" style="line-height:1.65">${esc(q.text)}</p><p class="smallmuted"><b>Gabarito: ${q.answer?'Certo':'Errado'}</b> · ${esc(q.explanation)}</p></div>`}).join('')}</section></div>`}
+function exportFile(name,data){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json;charset=utf-8'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+async function importJson(file,kind){if(!file)return;try{const imported=JSON.parse(await file.text());if(kind==='content'){
+ const ts=Array.isArray(imported.topics)?imported.topics:[];const qs=Array.isArray(imported.questions)?imported.questions:[];if(!ts.length&&!qs.length)throw Error('O JSON precisa ter topics e/ou questions.');
+ const existingTopics=new Set(topics().map(t=>t.id));let addedT=0,addedQ=0;
+ for(const t of ts){if(t&&typeof t.id==='string'&&typeof t.title==='string'&&typeof t.summary==='string'&&!existingTopics.has(t.id)&&['I','II','III','BÁSICOS'].includes(t.block)){state.customTopics.push({...t,formula:t.formula||'',example:t.example||'',links:Array.isArray(t.links)?t.links:[]});existingTopics.add(t.id);addedT++}}
+ const ids=new Set(questions().map(q=>q.id));for(const q of qs){if(q&&typeof q.id==='string'&&typeof q.text==='string'&&typeof q.explanation==='string'&&typeof q.answer==='boolean'&&existingTopics.has(q.topic)&&!ids.has(q.id)){state.customQuestions.push({...q,difficulty:[1,2,3].includes(q.difficulty)?q.difficulty:2,origin:q.origin||'Importada'});ids.add(q.id);addedQ++}}
+ save();toast(`Importados: ${addedT} matérias e ${addedQ} questões.`);render();
+ }else{if(!imported||!Array.isArray(imported.history)||!Array.isArray(imported.read))throw Error('Arquivo de backup inválido.');if(!confirm('Restaurar este backup? O progresso atual será substituído.'))return;state={...initial,...imported};save();setTheme();nav('dashboard');toast('Backup restaurado com sucesso.')}}catch(e){toast(`Não foi possível importar: ${e.message}`)}}
+const selectedCount=()=>Number(document.querySelector('#quizCounts .numchip.selected')?.dataset.count||10);
+function handleClick(e){const v=e.target.closest('[data-view]');if(v){nav(v.dataset.view);return}const b=e.target.closest('[data-action]');if(!b)return;const a=b.dataset.action,id=b.dataset.id;
+ switch(a){case 'menu':$('#sidebar').classList.toggle('open');$('#mobileoverlay').classList.toggle('show');break;
+ case 'theme':state.theme=state.theme==='light'?'dark':'light';save();setTheme();break;
+ case 'open-topic':nav('lesson',id);break;
+ case 'filter-block':activeBlock=b.dataset.block;render();break;
+ case 'mark-read':state.read=state.read.includes(id)?state.read.filter(x=>x!==id):[...state.read,id];save();render();break;
+ case 'start-quick':startSession({count:10});break;
+ case 'practice-topic':startSession({topic:id,count:topicQuestions(id).length});break;
+ case 'start-filtered':startSession({count:10,topic:qTopic==='TODOS'?null:qTopic,difficulty:qDifficulty==='TODOS'?null:qDifficulty});break;
+ case 'start-single':startSession({single:id,count:1});break;
+ case 'start-wrong':startSession({source:'errors',count:wrong().length});break;
+ case 'pick-count':document.querySelectorAll('.numchip').forEach(x=>x.classList.toggle('selected',x===b));break;
+ case 'start-mock':startSession({count:selectedCount(),mode:'mock'});break;
+ case 'answer':answerQuiz(b.dataset.value==='true');break;
+ case 'skip':answerQuiz(null);break;
+ case 'next-question':nextQuestion();break;
+ case 'end-quiz':quiz=null;nav('questoes');break;
+ case 'bookmark':state.bookmark=state.bookmark.includes(id)?state.bookmark.filter(x=>x!==id):[...state.bookmark,id];save();render();break;
+ case 'export-content':exportFile('petroprep-minhas-questoes.json',{topics:state.customTopics,questions:state.customQuestions});toast('Seu conteúdo personalizado foi exportado.');break;
+ case 'export-all':exportFile('petroprep-banco-completo.json',{...BASE,topics:topics(),questions:questions()});break;
+ case 'export-backup':exportFile('petroprep-backup.json',state);break;
+ case 'import-content':$('#importContentFile')?.click();break;
+ case 'import-backup':$('#importBackupFile')?.click();break;
+ case 'delete-custom':if(confirm('Excluir esta questão personalizada?')){state.customQuestions=state.customQuestions.filter(x=>x.id!==id);save();render()}break;
+ case 'reset-progress':if(confirm('Zerar todas as respostas, aulas e etapas concluídas? Suas questões personalizadas serão mantidas.')){state.history=[];state.read=[];state.weeks=[];state.bookmark=[];save();window.PetroCloud?.resetAnswers();render();toast('Progresso reiniciado.')}break;
+ }
+}
+document.addEventListener('click',handleClick);
+$('#mobileoverlay').addEventListener('click',()=>{$('#sidebar').classList.remove('open');$('#mobileoverlay').classList.remove('show')});
+document.addEventListener('input',e=>{if(e.target.id==='topicSearch'){searchText=e.target.value;const target=$('#topicsList');if(target)target.innerHTML=topicCards(topics().filter(t=>(activeBlock==='TODOS'||t.block===activeBlock)&&(`${t.title} ${t.summary}`.toLowerCase().includes(searchText.toLowerCase()))))}});
+document.addEventListener('change',e=>{
+ if(e.target.id==='qTopic'||e.target.id==='qDifficulty'){qTopic=$('#qTopic')?.value||'TODOS';qDifficulty=$('#qDifficulty')?.value||'TODOS';render()}
+ if(e.target.dataset.action==='week'){let n=Number(e.target.dataset.week);state.weeks=e.target.checked?[...new Set([...state.weeks,n])]:state.weeks.filter(x=>x!==n);save();render()}
+ if(e.target.id==='importContentFile'){importJson(e.target.files[0],'content');e.target.value=''}
+ if(e.target.id==='importBackupFile'){importJson(e.target.files[0],'backup');e.target.value=''}
+});
+document.addEventListener('submit',e=>{
+ if(e.target.id==='addQuestion'){e.preventDefault();const x=Object.fromEntries(new FormData(e.target));if(x.text.trim().length<10||x.explanation.trim().length<8){toast('Preencha enunciado e explicação.');return}state.customQuestions.push({id:'UQ'+Date.now().toString(36),topic:x.topic,text:x.text.trim(),answer:x.answer==='true',explanation:x.explanation.trim(),difficulty:Number(x.difficulty),origin:'Autoral • personalizada'});save();render();toast('Questão adicionada com sucesso!')}
+ if(e.target.id==='addTopic'){e.preventDefault();const x=Object.fromEntries(new FormData(e.target));if(x.summary.trim().length<20){toast('Escreva um resumo de pelo menos 20 caracteres.');return}state.customTopics.push({id:'UT'+Date.now().toString(36),title:x.title.trim(),block:x.block,summary:x.summary.trim(),formula:x.formula.trim(),example:x.example.trim(),links:[],level:'Intermediário'});save();render();toast('Matéria adicionada com sucesso!')}
+});
+window.PetroPrep={version:BASE.metadata.version,getContent:()=>({topics:topics(),questions:questions()}),getProgress:()=>structuredClone(state)};
+window.PetroPrepBridge={
+  getState:()=>structuredClone(state),
+  getLocalState:()=>loadState(),
+  setStorageKey:key=>{storageKey=key},
+  applyState:newState=>{state={...initial,...newState};setTheme();render()},
+  notify:toast,
+  render,
+  initial:()=>structuredClone(initial)
+};
+setTheme();render();window.PetroCloud?.init(window.PetroPrepBridge);
+})();
+
+</script>
+</body>
+</html>

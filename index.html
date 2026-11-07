@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="theme-color" content="#181627"/>
+<title>PetroPrep — Engenharia de Petróleo</title>
+<meta name="description" content="Portal de estudos para Petrobras Engenharia de Petróleo com trilhas, resumos, questões no estilo Cebraspe e acompanhamento de desempenho."/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+ <div class="brand"><div class="brandmark">P</div><div><div class="brandtitle">petroprep<span style="color:#b8a6ff">.</span></div><div class="brandcaption">Seu espaço de estudo</div></div></div>
+ <div class="navsection">Visão geral</div>
+ <nav id="navigation">
+ <button class="navitem active" data-view="dashboard"><span class="navicon">◫</span> Painel inicial</button>
+ <button class="navitem" data-view="trilhas"><span class="navicon">▤</span> Matérias e aulas</button>
+ <button class="navitem" data-view="questoes"><span class="navicon">◉</span> Banco de questões</button>
+ <button class="navitem" data-view="simulados"><span class="navicon">◴</span> Simulados</button>
+ <button class="navitem" data-view="erros"><span class="navicon">✎</span> Caderno de erros</button>
+ <div class="navsection">Organização</div>
+ <button class="navitem" data-view="plano"><span class="navicon">▦</span> Plano de 12 semanas</button>
+ <button class="navitem" data-view="biblioteca"><span class="navicon">▧</span> Biblioteca</button>
+ <button class="navitem" data-view="gerenciar"><span class="navicon">⚙</span> Gerenciar conteúdo</button>
+ </nav>
+ <div class="sidebottom"><div class="sidepromo"><strong>Um passo de cada vez. ✦</strong><p>Treine com questões autorais de Certo ou Errado e acompanhe sua evolução.</p><button data-action="start-quick">Começar 10 questões ↗</button></div><div class="sidefoot">Base: edital Petrobras 2021/2022<br>Projeto independente • versão 1.0</div></div>
+</aside>
+<div id="mobileoverlay" class="mobileoverlay"></div>
+<div class="content">
+<header class="topbar"><div style="display:flex;gap:14px;align-items:center"><button class="iconbtn burger" data-action="menu" aria-label="Abrir menu">☰</button><span class="toplabel" id="breadcrumb">Seu painel de aprendizagem</span></div><div class="topright"><span class="pill">✦ ENGENHARIA DE PETRÓLEO</span><button class="iconbtn" id="themeToggle" data-action="theme" aria-label="Alternar tema">◐</button><button class="account-button" id="cloudAccount" type="button" aria-label="Conta e sincronização">◉ <span id="cloudAccountText">Modo local</span></button></div></header>
+<main id="main" class="main" tabindex="-1"></main>
+</div>
+</div>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="conteudo.js"></script>
+<script src="cloud.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

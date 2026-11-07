@@ -1,0 +1,14 @@
+{
+  "topics": [],
+  "questions": [
+    {
+      "id": "EXEMPLO001",
+      "topic": "fluidos",
+      "text": "Para um fluido incompressível em escoamento permanente, a vazão volumétrica é constante ao longo de uma tubulação sem derivações.",
+      "answer": true,
+      "explanation": "Pela continuidade, Q=A·V é constante no escoamento permanente incompressível sem entradas ou saídas laterais.",
+      "difficulty": 2,
+      "origin": "Exemplo autoral"
+    }
+  ]
+}
