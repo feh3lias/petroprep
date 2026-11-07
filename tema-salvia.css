@@ -1,0 +1,60 @@
+/* === PETROPREP · IDENTIDADE SÁLVIA === */
+:root {
+  --bg:#F5F8F3; --surface:#FFFEFA; --surface2:#EDF4EC;
+  --text:#19352D; --muted:#687B72; --border:#DBE8DE;
+  --purple:#427B69; --purpledeep:#315F50; --purplelight:#E7F2E9;
+  --blue:#427B69; --green:#26805D; --greenlight:#E5F4E7;
+  --amber:#A07516; --amberlight:#FFF4D5;
+  --sidebar:#1D3931; --sidebartext:#BDCEC5;
+  --shadow:0 12px 36px rgba(28,64,43,.06);
+}
+body{background:var(--bg)}
+.sidebar{background:var(--sidebar)}
+.brand{padding:6px 8px 26px;gap:12px}
+.brandmark{width:52px;height:52px;flex:0 0 52px;border-radius:14px;background:#F7FAF5!important;box-shadow:0 4px 14px #00000020;overflow:hidden;display:grid;place-items:center;border:1px solid #FFFFFF18;padding:2px}
+.brandmark img{height:100%;width:100%;display:block;object-fit:contain}
+.brandtitle{color:#FFFEF6;font-size:20px;letter-spacing:-.7px;line-height:1.2}
+.brandtitle .brand-accent{color:#FFCD17}
+.brandcaption{margin-top:5px;color:#C1D6C8;letter-spacing:1.1px;font-size:9px}
+.navsection{color:#92B1A0}
+.navitem:hover{background:#2B5141}
+.navitem.active{background:#366851;box-shadow:inset 3px 0 #FFCB0A;color:#fff}
+.sidepromo{background:linear-gradient(137deg,#2C5546,#18372E);border-color:#46715C}
+.sidepromo p{color:#D0E4D6}
+.sidepromo button{background:#FFCB0A;color:#153D2D}
+.sidefoot{color:#9DB8A8}
+.topbar{background:#FFFEF4EF;border-bottom-color:var(--border)}
+.pill{color:#356B53;background:#E6F0E7}
+.eyebrow,.weekline .lab{color:#427B69}
+.hero{background:radial-gradient(circle at 91% 12%,#528473 0%,transparent 36%),linear-gradient(125deg,#2A5545,#17392F 75%);box-shadow:0 22px 44px #17483418}
+.hero:before{border-color:#F7D97128}
+.hero h1{color:#fff}
+.hero p{color:#D6E9DD}
+.herotag{color:#F8EEC8;background:#ffffff19;border-color:#ffffff2c}
+.btn{background:var(--purple);border-color:var(--purple)}
+.btn.outline{border-color:#A9CDB9;color:var(--purple)}
+.hero .btn:not(.ghostwhite){background:#FFCC1A;border-color:#FFCC1A;color:#18382D}
+.hero .btn.ghostwhite{background:#ffffff17;border-color:#ffffff45;color:#fff}
+.progressfill{background:linear-gradient(90deg,#40795E,#8CAF83)}
+.donut{background:conic-gradient(var(--purple) var(--percent),#E4EEE5 0)}
+body.dark .donut{background:conic-gradient(var(--purple) var(--percent),#365644 0)}
+.stat-icon,.courseicon,.weeknum{background:#E6F2E7;color:#3F765B}
+.stat,.panel,.actioncard,.topiccard,.resourcecard,.weekitem{background:var(--surface)}
+.actioncard:hover,.topiccard:hover,.resourcecard:hover{border-color:#99B8A3;box-shadow:0 12px 25px #25684912}
+.notice{background:#E6F2E8;color:#2C5E49}
+.pill,.chip{font-weight:750}
+.focus-pill{background:#ffedbf;color:#705512}
+.topbar .account-button,#cloudAccount{background:#427B69!important;border-color:#427B69!important;color:#FFFFFF!important;font-weight:800;max-width:none}
+.topbar .account-button:hover,#cloudAccount:hover{background:#315F50!important}
+.cloud-panel{background:#FFFEFA}
+.cloud-link{color:#356E52}
+input:focus-visible,button:focus-visible,a:focus-visible{outline-color:#F6CB24}
+body.dark{--bg:#10221B;--surface:#1B3429;--surface2:#244335;--text:#EBF5ED;--muted:#AAC1B2;--border:#355846;--purple:#85B8A0;--purpledeep:#B2D0B9;--purplelight:#274936;--greenlight:#254C37;--amberlight:#534927;--shadow:0 10px 28px #0004}
+body.dark .topbar{background:#193025EF}
+body.dark .hero{background:linear-gradient(125deg,#2B5946,#153328)}
+body.dark .pill{background:#2A4A37;color:#CAE7CF}
+body.dark .courseicon,body.dark .stat-icon,body.dark .weeknum{background:#2B4E3A;color:#ABD7B9}
+body.dark .sidepromo{background:linear-gradient(140deg,#325943,#1D362C)}
+body.dark .notice{background:#2C4F3A;color:#CBE8D3}
+body.dark .cloud-panel{background:#1B3429}
+@media(max-width:620px){.brandmark{width:48px;height:48px;flex-basis:48px}.brandtitle{font-size:19px}.brandcaption{font-size:8px}}
