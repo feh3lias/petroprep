@@ -144,9 +144,12 @@
     if(error)notify('Resposta salva no navegador. Falha na nuvem; tente “Sincronizar agora”.');
   }
   async function loadSession(session){
-    const token=++initToken; clearTimeout(timer);
     const id=session?.user?.id||null;
-    if(id===user?.id && id!==null)return;
+    // Supabase emits INITIAL_SESSION and getSession concurrently. Do not
+    // invalidate an active initialization for the same authenticated account.
+    if(id && id===user?.id)return;
+    if(!id && !user)return;
+    const token=++initToken; clearTimeout(timer);
     if(!id){
       user=null;admin=false;bridge.setStorageKey('petroprep_local_visitante_v2');
       bridge.applyState(bridge.getLocalState());status('Entrar / Cadastrar');
