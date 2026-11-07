@@ -11,7 +11,7 @@
   const genId=()=>window.crypto?.randomUUID?.()||'00000000-0000-4000-8000-'+Math.random().toString(16).slice(2).padEnd(12,'0').slice(0,12);
   const unique=a=>[...new Set((a||[]))];
   const mergeObjects=(a,b)=>[...new Map([...(a||[]),...(b||[])].filter(x=>x&&x.id).map(x=>[x.id,x])).values()];
-  const status=t=>{const e=document.querySelector('#cloudAccountText');if(e)e.textContent=t};
+  const status=t=>{const e=document.querySelector('#cloudAccountText');if(e)e.textContent=t;const hint=document.querySelector('#loginHint');if(hint)hint.style.display=(user?'none':'flex')};
   const notify=t=>bridge?.notify(t);
   const currentState=()=>bridge?.getState();
   const isAuthenticated=()=>Boolean(user);
@@ -149,7 +149,7 @@
     if(id===user?.id && id!==null)return;
     if(!id){
       user=null;admin=false;bridge.setStorageKey('petroprep_local_visitante_v2');
-      bridge.applyState(bridge.getLocalState());status('Entrar');
+      bridge.applyState(bridge.getLocalState());status('Entrar / Cadastrar');
       if(enabled)showLogin();return;
     }
     const newUser=session.user;
