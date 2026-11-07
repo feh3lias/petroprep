@@ -9,8 +9,10 @@
 <meta name="description" content="Portal de estudos para Petrobras Engenharia de Petróleo com trilhas, resumos, questões no estilo Cebraspe e acompanhamento de desempenho."/>
 <link rel="stylesheet" href="styles.css?v=20261107-3"/>
 <link rel="stylesheet" href="tema-salvia.css?v=20261107-3"/>
+<style id="petro-auth-gate">body:not(.petro-authenticated) .app{display:none!important}body:not(.petro-authenticated) .cloud-overlay{position:fixed;inset:0;z-index:99999;background:linear-gradient(145deg,#183D31,#315F4B)!important;display:flex;align-items:center;justify-content:center;padding:18px}body:not(.petro-authenticated) .cloud-panel{background:#FFFEFA;max-width:460px;width:100%;border-radius:22px;box-shadow:0 24px 80px #09281944}body:not(.petro-authenticated) .cloud-close{display:none!important}</style>
 </head>
 <body>
+<noscript><div style="padding:3rem;font:18px system-ui">Ative o JavaScript para entrar no PetroPrep.</div></noscript>
 <div class="app">
 <aside class="sidebar" id="sidebar">
  <div class="brand"><div class="brandmark"><img src="logo-petroprep-p.svg" alt="PetroPrep"></div><div><div class="brandtitle">petro<span class="brand-accent">prep</span><span class="brand-accent">.</span></div><div class="brandcaption">Seu espaço de estudo</div></div></div>
@@ -37,7 +39,7 @@
 <script src="config.js?v=20261107-3"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="conteudo.js?v=20261107-3"></script>
-<script src="cloud.js?v=20261107-4"></script>
+<script src="cloud.js?v=20261107-5"></script>
 <script src="app.js?v=20261107-3"></script>
 </body>
 </html>
