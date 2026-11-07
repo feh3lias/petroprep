@@ -19,10 +19,16 @@
     if(!overlay){overlay=document.createElement('div');overlay.className='cloud-overlay';document.body.appendChild(overlay)}
     overlay.innerHTML=`<section class="cloud-panel ${wide?'wide':''}" role="dialog" aria-modal="true" aria-label="Conta PetroPrep">${html}</section>`;
   }
-  function closeOverlay(){overlay?.remove();overlay=null}
+  function closeOverlay(){if(!user)return;overlay?.remove();overlay=null}
+  const unlock=()=>document.body.classList.add('petro-authenticated');
+  const lock=()=>document.body.classList.remove('petro-authenticated');
+  function showAuthUnavailable(reason){lock();setOverlay(`${title('Acesso indisponível','Para acessar o PetroPrep, é necessário entrar na sua conta.')}${message(reason,true)}<p class="cloud-top-note">Recarregue a página para tentar novamente. Seus dados não foram apagados.</p>`);}
+  function showChecking(){lock();setOverlay(`<div style="text-align:center;padding:26px 10px"><img src="logo-petroprep-p.svg" alt="PetroPrep" width="60" height="60"><h2 class="cloud-heading">PetroPrep</h2><p class="cloud-muted">Verificando sua sessão com segurança…</p></div>`);}
   const title=(h,desc)=>`<div class="cloud-headrow"><div><h2 class="cloud-heading">${h}</h2><p class="cloud-muted">${desc}</p></div><button type="button" class="cloud-close" data-cloud="close" aria-label="Fechar">×</button></div>`;
   const message=(msg,isError=false)=>`<p class="${isError?'cloud-error':'cloud-good'}" role="status">${escape(msg)}</p>`;
   function showLogin(which='login',msg='',error=false){
+    if(user)return;
+    lock();
     const register=which==='register';
     setOverlay(`${title(register?'Criar minha conta':'Entrar no PetroPrep','Suas respostas e aulas sincronizadas entre computador e celular.')}
     ${msg?message(msg,error):''}
@@ -33,12 +39,12 @@
       <label class="cloud-field">Senha<input name="password" type="password" minlength="6" autocomplete="${register?'new-password':'current-password'}" required placeholder="Mínimo de 6 caracteres"></label>
       <button class="btn" type="submit" style="width:100%">${register?'Criar conta':'Entrar'} →</button>
     </form>
-    <div class="cloud-actions"><button class="cloud-link" data-cloud="reset-password">Esqueci minha senha</button><button class="cloud-link" data-cloud="close">Continuar sem conta (salva só neste navegador)</button></div>
+    <div class="cloud-actions"><button class="cloud-link" data-cloud="reset-password">Esqueci minha senha</button></div>
     <div class="cloud-top-note">Os dados dos estudantes ficam privados. Só a conta marcada como administradora pode acompanhar os resultados das outras pessoas.</div>`);
     overlay.querySelector('#cloudAuthForm').dataset.mode=register?'register':'login';
   }
   function showAccount(){
-    if(!enabled){setOverlay(`${title('Modo local','O site funciona sem banco de dados, mas não sincroniza.')}${message('Para habilitar o login, configure config.js com a URL e a chave pública do seu projeto Supabase.')}`);return}
+    if(!enabled){showAuthUnavailable('O sistema de login está sem configuração.');return}
     if(!user){showLogin();return}
     setOverlay(`${title('Minha conta','Sincronização com o banco de dados ativa.')}
     <div class="cloud-badge">✓ ${escape(user.email||'Conta conectada')}</div>
@@ -148,15 +154,15 @@
     // Supabase emits INITIAL_SESSION and getSession concurrently. Do not
     // invalidate an active initialization for the same authenticated account.
     if(id && id===user?.id)return;
-    if(!id && !user)return;
+    if(!id && !user){showLogin();return;}
     const token=++initToken; clearTimeout(timer);
     if(!id){
-      user=null;admin=false;bridge.setStorageKey('petroprep_local_visitante_v2');
+      user=null;admin=false;lock();bridge.setStorageKey('petroprep_local_visitante_v2');
       bridge.applyState(bridge.getLocalState());status('Entrar / Cadastrar');
       if(enabled)showLogin();return;
     }
     const newUser=session.user;
-    user=newUser;admin=false;status('Carregando…');
+    user=newUser;admin=false;unlock();status('Carregando…');closeOverlay();
     bridge.setStorageKey(`petroprep_user_${newUser.id}_v2`);
     const local=bridge.getLocalState();
     bridge.applyState(local);
@@ -281,7 +287,7 @@
   function clickOverlay(e){
     const button=e.target.closest('[data-cloud]');if(!button)return;
     const act=button.dataset.cloud;
-    if(act==='close')closeOverlay();
+    if(act==='close' && user)closeOverlay();
     if(act==='login-tab')showLogin('login');
     if(act==='register-tab')showLogin('register');
     if(act==='reset-password')resetPassword();
@@ -295,12 +301,13 @@
   }
   function init(appBridge){
     bridge=appBridge;
+    showChecking();
     document.querySelector('#cloudAccount')?.addEventListener('click',showAccount);
     document.addEventListener('click',clickOverlay);
     document.addEventListener('submit',e=>{if(e.target.id==='cloudAuthForm')authSubmit(e)});
-    if(!enabled){status('Modo local');return}
-    if(!window.supabase?.createClient){status('Sem conexão');notify('Biblioteca de autenticação não carregou. Verifique sua internet.');return}
-    db=window.supabase.createClient(cfg.url.replace(/\/$/,''),cfg.publishableKey);
+    if(!enabled){status('Login indisponível');showAuthUnavailable('O login ainda não está configurado.');return}
+    if(!window.supabase?.createClient){status('Sem conexão');showAuthUnavailable('Não foi possível carregar o sistema de autenticação. Confira sua conexão.');return}
+    try{db=window.supabase.createClient(cfg.url.replace(/\/$/,''),cfg.publishableKey)}catch(e){showAuthUnavailable('Falha ao inicializar o login: '+(e.message||'erro desconhecido'));return}
     bridge.setStorageKey('petroprep_local_visitante_v2');
     bridge.applyState(bridge.getLocalState());
     status('Entrar');
@@ -308,9 +315,9 @@
       if(['INITIAL_SESSION','SIGNED_IN','SIGNED_OUT'].includes(event))setTimeout(()=>loadSession(session),0);
     });
     db.auth.getSession().then(({data,error})=>{
-      if(error){notify('Não foi possível recuperar a sessão.');showLogin()}
+      if(error){showAuthUnavailable('Não foi possível verificar sua sessão. Atualize a página e tente novamente.')}
       else loadSession(data.session);
-    });
+    }).catch(e=>{showAuthUnavailable('Falha ao verificar sessão: '+(e.message||'erro de rede'));});
     window.addEventListener('online',()=>{if(user){syncAttempts().then(()=>saveSettings()).catch(()=>{});}});
   }
   window.PetroCloud={init,isAuthenticated,persist,trackAnswer,resetAnswers,showAccount};
