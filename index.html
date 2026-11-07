@@ -3,15 +3,17 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="theme-color" content="#181627"/>
+<meta name="theme-color" content="#1D3931"/>
+<link rel="icon" href="logo-petroprep-p.svg" type="image/svg+xml"/>
 <title>PetroPrep — Engenharia de Petróleo</title>
 <meta name="description" content="Portal de estudos para Petrobras Engenharia de Petróleo com trilhas, resumos, questões no estilo Cebraspe e acompanhamento de desempenho."/>
-<link rel="stylesheet" href="styles.css?v=20261107-2"/>
+<link rel="stylesheet" href="styles.css?v=20261107-3"/>
+<link rel="stylesheet" href="tema-salvia.css?v=20261107-3"/>
 </head>
 <body>
 <div class="app">
 <aside class="sidebar" id="sidebar">
- <div class="brand"><div class="brandmark">P</div><div><div class="brandtitle">petroprep<span style="color:#b8a6ff">.</span></div><div class="brandcaption">Seu espaço de estudo</div></div></div>
+ <div class="brand"><div class="brandmark"><img src="logo-petroprep-p.svg" alt="PetroPrep"></div><div><div class="brandtitle">petro<span class="brand-accent">prep</span><span class="brand-accent">.</span></div><div class="brandcaption">Seu espaço de estudo</div></div></div>
  <div class="navsection">Visão geral</div>
  <nav id="navigation">
  <button class="navitem active" data-view="dashboard"><span class="navicon">◫</span> Painel inicial</button>
@@ -29,13 +31,13 @@
 <div id="mobileoverlay" class="mobileoverlay"></div>
 <div class="content">
 <header class="topbar"><div style="display:flex;gap:14px;align-items:center"><button class="iconbtn burger" data-action="menu" aria-label="Abrir menu">☰</button><span class="toplabel" id="breadcrumb">Seu painel de aprendizagem</span></div><div class="topright"><span class="pill">✦ ENGENHARIA DE PETRÓLEO</span><button class="iconbtn" id="themeToggle" data-action="theme" aria-label="Alternar tema">◐</button><button class="account-button" id="cloudAccount" type="button" aria-label="Entrar ou cadastrar no PetroPrep" style="background:#6d4be3;color:#fff;border:1px solid #6d4be3;padding:10px 16px;font-weight:700;border-radius:12px">◉ <span id="cloudAccountText">Entrar / Cadastrar</span></button></div></header>
-<div id="loginHint" style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 24px 0;padding:12px 16px;border-radius:12px;background:#efeaff;color:#241654;font:500 14px system-ui"><span>☁️ Salve seus estudos na nuvem: crie sua conta gratuitamente.</span><button type="button" onclick="window.PetroCloud?.showAccount()" style="cursor:pointer;border:0;background:#6d4be3;color:#fff;border-radius:9px;padding:10px 16px;font-weight:700">Entrar ou criar conta →</button></div><main id="main" class="main" tabindex="-1"></main>
+<div id="loginHint" style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 24px 0;padding:12px 16px;border-radius:12px;background:#E6F2E7;color:#234934;font:500 14px system-ui"><span>☁️ Salve seus estudos na nuvem: crie sua conta gratuitamente.</span><button type="button" onclick="window.PetroCloud?.showAccount()" style="cursor:pointer;border:0;background:#427B69;color:#fff;border-radius:9px;padding:10px 16px;font-weight:700">Entrar ou criar conta →</button></div><main id="main" class="main" tabindex="-1"></main>
 </div>
 </div>
-<script src="config.js?v=20261107-2"></script>
+<script src="config.js?v=20261107-3"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="conteudo.js?v=20261107-2"></script>
-<script src="cloud.js?v=20261107-2"></script>
-<script src="app.js?v=20261107-2"></script>
+<script src="conteudo.js?v=20261107-3"></script>
+<script src="cloud.js?v=20261107-3"></script>
+<script src="app.js?v=20261107-3"></script>
 </body>
 </html>
