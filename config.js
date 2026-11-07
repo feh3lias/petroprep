@@ -1,5 +1,5 @@
-/* Chaves PÚBLICAS do projeto Supabase. Nunca use service_role/secret aqui. */
+/* Configuração pública do Supabase — nunca incluir chave secreta/service_role. */
 window.PETROPREP_CONFIG = {
-  url: '',
-  publishableKey: ''
+  url: 'https://vdautzmcbxncmoyjmtiy.supabase.co',
+  publishableKey: 'sb_publishable_MjVIQJkXkd7Gnb9PvCtqMw_-KGjtClP'
 };
